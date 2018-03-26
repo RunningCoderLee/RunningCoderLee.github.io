@@ -5,14 +5,25 @@
   
 
   
-  <title>Hexo</title>
+  <title>手摸手教你用github和hexo搭建个人博客（番外篇） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这篇主要讲解一下如何将我们购买的域名和Github的Git Page服务关联起来，从而实现访问购买的域名直接跳转到博客页面的需求 购买域名现在主流的两大购买域名的网站分别是godaddy（国外）和阿里云（国内），至于选择哪个凭个人喜好，这里仅以阿里云为样例进行介绍，godaddy在配置上也大同小异。 首先登录阿里云的主页进行账号注册，注册成功后登录账号，选择产品目录下的域名注册  搜索自己喜爱的域">
+<meta name="keywords" content="blog,tutorial,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手摸手教你用github和hexo搭建个人博客（番外篇）">
+<meta property="og:url" content="http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo-extend/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这篇主要讲解一下如何将我们购买的域名和Github的Git Page服务关联起来，从而实现访问购买的域名直接跳转到博客页面的需求 购买域名现在主流的两大购买域名的网站分别是godaddy（国外）和阿里云（国内），至于选择哪个凭个人喜好，这里仅以阿里云为样例进行介绍，godaddy在配置上也大同小异。 首先登录阿里云的主页进行账号注册，注册成功后登录账号，选择产品目录下的域名注册  搜索自己喜爱的域">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/aliyun-home.jpg">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/aliyun-parsing.jpg">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/aliyun-parsing-setting.jpg">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/github-configuration.jpg">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/aliyun-parsing-help-info.jpg">
+<meta property="og:updated_time" content="2018-03-26T13:25:06.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="手摸手教你用github和hexo搭建个人博客（番外篇）">
+<meta name="twitter:description" content="这篇主要讲解一下如何将我们购买的域名和Github的Git Page服务关联起来，从而实现访问购买的域名直接跳转到博客页面的需求 购买域名现在主流的两大购买域名的网站分别是godaddy（国外）和阿里云（国内），至于选择哪个凭个人喜好，这里仅以阿里云为样例进行介绍，godaddy在配置上也大同小异。 首先登录阿里云的主页进行账号注册，注册成功后登录账号，选择产品目录下的域名注册  搜索自己喜爱的域">
+<meta name="twitter:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/aliyun-home.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,102 +70,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/02/14/hello-world/" class="article-date">
-  <time datetime="2018-02-14T03:55:14.109Z" itemprop="datePublished">2018-02-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/14/hello-world/" data-id="cjf89pda50005m1bxdrws96lr" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-create-personal-blog-with-github-and-hexo.II" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/" class="article-date">
-  <time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished">2017-12-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/blog/">blog</a>►<a class="article-category-link" href="/categories/blog/hexo/">hexo</a>►<a class="article-category-link" href="/categories/blog/hexo/tutorial/">tutorial</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/">手摸手教你用github和hexo搭建个人博客（二）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇我们创建并开启了 <code>github</code> 的 <code>Github Pages</code> 服务，已经可以通过指定路径访问博客内容了，这篇我们开始用 <code>Hexo</code> 管理和更新博客内容。</p>
-<p><img src="/images/create-personal-blog-with-github-and-hexo/hexo.png" alt="Hexo"></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.II/" data-id="cjf89pd9q0000m1bxkhqkkoa1" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-create-personal-blog-with-github-and-hexo-extend" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-create-personal-blog-with-github-and-hexo-extend" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" class="article-date">
   <time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished">2017-12-29</time>
@@ -171,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/">手摸手教你用github和hexo搭建个人博客（番外篇）</a>
+    <h1 class="article-title" itemprop="name">
+      手摸手教你用github和hexo搭建个人博客（番外篇）
     </h1>
   
 
@@ -208,59 +124,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-create-personal-blog-with-github-and-hexo.I" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/" class="article-date">
-  <time datetime="2017-12-27T16:00:00.000Z" itemprop="datePublished">2017-12-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/blog/">blog</a>►<a class="article-category-link" href="/categories/blog/hexo/">hexo</a>►<a class="article-category-link" href="/categories/blog/hexo/tutorial/">tutorial</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
         
+          手摸手教你用github和hexo搭建个人博客（二）
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/">手摸手教你用github和hexo搭建个人博客（一）</a>
-    </h1>
   
+    <a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">手摸手教你用github和hexo搭建个人博客（一）</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>近期心血来潮，把尘封已久的博客又捡起来了，之前各种折腾框架和主题，每次都是折腾完就放那再也不更新了，这次希望能真正启用沉寂多年的blog。话不多说，先从此次装修blog开始，通过记录自己在从0到1的过程中踩过的各种坑来汇总出一篇搭建个人blog的教程</p>
-<p><img src="/images/create-personal-blog-with-github-and-hexo/github-pages.png" alt="Github Pages"></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/28/create-personal-blog-with-github-and-hexo.I/" data-id="cjf89pd9u0001m1bxv7xatjiu" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         

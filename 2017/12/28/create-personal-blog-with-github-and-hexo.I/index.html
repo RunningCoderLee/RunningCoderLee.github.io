@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>手摸手教你用github和hexo搭建个人博客（一） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="近期心血来潮，把尘封已久的博客又捡起来了，之前各种折腾框架和主题，每次都是折腾完就放那再也不更新了，这次希望能真正启用沉寂多年的blog。话不多说，先从此次装修blog开始，通过记录自己在从0到1的过程中踩过的各种坑来汇总出一篇搭建个人blog的教程">
+<meta name="keywords" content="blog,tutorial,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手摸手教你用github和hexo搭建个人博客（一）">
+<meta property="og:url" content="http://yoursite.com/2017/12/28/create-personal-blog-with-github-and-hexo.I/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="近期心血来潮，把尘封已久的博客又捡起来了，之前各种折腾框架和主题，每次都是折腾完就放那再也不更新了，这次希望能真正启用沉寂多年的blog。话不多说，先从此次装修blog开始，通过记录自己在从0到1的过程中踩过的各种坑来汇总出一篇搭建个人blog的教程">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/github-pages.png">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/new%20repo.png">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/repo-name.png">
+<meta property="og:updated_time" content="2018-03-23T08:56:38.210Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手摸手教你用github和hexo搭建个人博客（一）">
+<meta name="twitter:description" content="近期心血来潮，把尘封已久的博客又捡起来了，之前各种折腾框架和主题，每次都是折腾完就放那再也不更新了，这次希望能真正启用沉寂多年的blog。话不多说，先从此次装修blog开始，通过记录自己在从0到1的过程中踩过的各种坑来汇总出一篇搭建个人blog的教程">
+<meta name="twitter:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/github-pages.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-create-personal-blog-with-github-and-hexo.I" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/" class="article-date">
+  <time datetime="2017-12-27T16:00:00.000Z" itemprop="datePublished">2017-12-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/blog/">blog</a>►<a class="article-category-link" href="/categories/blog/hexo/">hexo</a>►<a class="article-category-link" href="/categories/blog/hexo/tutorial/">tutorial</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      手摸手教你用github和hexo搭建个人博客（一）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近期心血来潮，把尘封已久的博客又捡起来了，之前各种折腾框架和主题，每次都是折腾完就放那再也不更新了，这次希望能真正启用沉寂多年的blog。话不多说，先从此次装修blog开始，通过记录自己在从0到1的过程中踩过的各种坑来汇总出一篇搭建个人blog的教程</p>
+<p><img src="/images/create-personal-blog-with-github-and-hexo/github-pages.png" alt="Github Pages"></p>
+<a id="more"></a>
+<blockquote>
+<p>本系列文章中所展示的操作步骤和内容均为<code>OS X</code>操作环境下呈现，请使用<code>widows</code>和<code>Linux</code>的小伙伴们自行搜索对应的写法</p>
+</blockquote>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h2 id="什么是Github"><a href="#什么是Github" class="headerlink" title="什么是Github"></a>什么是Github</h2><p><code>Github</code>是全球最大同（码）性（农）交友（流）网站，我们这里用他所提供的<code>pages</code>服务来作为我们个人博客的载体</p>
+<h3 id="什么是Github-Pages"><a href="#什么是Github-Pages" class="headerlink" title="什么是Github Pages"></a>什么是Github Pages</h3><p><code>Git Pages</code>是一个免费提供部署静态站点的服务，<code>Github</code>用户可以通过在其站点上创建仓库并将静态网站或静态博客托管在github上，使用户可以分享自己的项目或作品。</p>
+<p><code>Git Pages</code>的特点如下：</p>
+<ul>
+<li>由Github免费托管，支持由git版本管理、Github多人协作</li>
+<li>只支持静态页面</li>
+<li>默认支持Jekyll生成器，允许Github站内生成或者用户上传</li>
+<li>可以绑定专有域名，或者使用Github提供的子域名</li>
+</ul>
+<p>我们可以通过各种静态站点生成器来生成所有静态页面并部署到指定仓库完成代码托管，常用的静态站点生成器如下：</p>
+<ul>
+<li><a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll(ruby)</a></li>
+<li><a href="http://docs.getpelican.com/en/stable/#" target="_blank" rel="noopener">Pelican(python)</a></li>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo(nodejs)</a></li>
+<li><a href="http://octopress.org/" target="_blank" rel="noopener">Octopress(基于Jekyll)</a></li>
+<li><a href="http://gohugo.org/" target="_blank" rel="noopener">Hugo(Go)</a></li>
+</ul>
+<p>我们这里选用<code>Hexo</code>，由于<code>Github Pages</code>默认只支持<code>Jekyll</code>，所以其他生成器需要在本地生成好静态页面后再上传到指定仓库。</p>
+<h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h3><p><code>Hexo</code>是一款快速、简洁且高效的博客框架，它具有以下几个特点：</p>
+<ul>
+<li>超快速度</li>
+<li>支持Markdown</li>
+<li>一键部署</li>
+<li>丰富的插件</li>
+</ul>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>在搭建博客之前我们需要先准备好开发环境，我们需要安装以下工具：</p>
+<ul>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a></li>
+</ul>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下载地址：<br><a href="https://git-scm.com/download/" target="_blank" rel="noopener">https://git-scm.com/download/</a></p>
+<p>在<code>OS X</code>环境下推荐用<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">Homebrew</a>进行安装, 如果你安装了<code>Xcode</code>则不再需要单独安装git</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>下载地址：<br><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></p>
+<p>推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">NVM</a>进行安装</p>
+<h2 id="创建博客托管仓库"><a href="#创建博客托管仓库" class="headerlink" title="创建博客托管仓库"></a>创建博客托管仓库</h2><h3 id="创建Github账号"><a href="#创建Github账号" class="headerlink" title="创建Github账号"></a>创建Github账号</h3><p>前往 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 页面注册<code>Github</code>账号，如果已有注册账号，直接登录即可</p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>点击页面右上角的 <code>+</code>，选择 <code>New Repository</code> 创建一个新的仓库<br><img src="/images/create-personal-blog-with-github-and-hexo/new repo.png" alt=""></p>
+<p>在<code>Repository name</code>下的输入框中填入仓库的名称，这里要注意，该仓库的名称命名必须是 <code>yourusername.github.io</code>的格式。然后根据提示点击 <code>Create repository</code> 创建仓库<br><img src="/images/create-personal-blog-with-github-and-hexo/repo-name.png" alt=""></p>
+<p>如果你在创建的时候勾选了 <code>Initialize this repository with a README</code>, 此时可以看到仓库里会有一个 <code>README</code> 的文件已经被创建好，如果没有勾选，此时仓库里空空如也，界面上默认会有一些git基本操作的提示内容</p>
+<p>按照上述命名规则创建的仓库，默认是开启 <code>Github Pages</code>服务的，所以我们现在就可以在浏览器中打开 <code>https://yourusername.github.io/</code> 来访问我们的静态页面。</p>
+<p>其实现在我们就可以通过在仓库里创建文件来丰富我们的博客内容了，只是采用这种方式不够傻瓜化。</p>
+<p>上面提到了现在社区里有很多成熟的静态站点生成器，下一篇我们就详细介绍如何采用 <code>Hexo</code> 框架来快速管理和更新我们的博客内容。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/28/create-personal-blog-with-github-and-hexo.I/" data-id="cjf89pd9u0001m1bxv7xatjiu" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          手摸手教你用github和hexo搭建个人博客（番外篇）
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/hexo/">hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/hexo/tutorial/">tutorial</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/">手摸手教你用github和hexo搭建个人博客（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/">手摸手教你用github和hexo搭建个人博客（番外篇）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/">手摸手教你用github和hexo搭建个人博客（一）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
