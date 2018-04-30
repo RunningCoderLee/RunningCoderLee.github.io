@@ -677,7 +677,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（番外篇）</a></div>
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
       
     </li>
   
@@ -691,7 +691,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（番外篇）</a></div>
       
     </li>
   
@@ -810,8 +810,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/" rel="prev" title="手摸手教你用github和hexo搭建个人博客（二）">
-                手摸手教你用github和hexo搭建个人博客（二） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="prev" title="手摸手教你用github和hexo搭建个人博客（番外篇）">
+                手摸手教你用github和hexo搭建个人博客（番外篇） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1265,7 +1265,12 @@
 
   
   <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("QwkK3nn4i0Di78LtixPeKqyG-gzGzoHsz", "mMpbTaF8d9Vy0zLyLLChpVhi");</script>
+  <script>
+    if(AV) {
+      AV.initialize("QwkK3nn4i0Di78LtixPeKqyG-gzGzoHsz", "mMpbTaF8d9Vy0zLyLLChpVhi");  
+    }
+    console.dir('AV = ', AV)
+  </script>
   <script>
     function showTime(Counter) {
       var query = new AV.Query(Counter);
