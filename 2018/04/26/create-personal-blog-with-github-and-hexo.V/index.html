@@ -1,107 +1,12 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.2.0">
-
-
-  <link rel="mask-icon" href="/logo.svg?v=6.2.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.2.0',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
+  <meta charset="utf-8">
   
 
-
-
-
+  
+  <title>手摸手教你用github和hexo搭建个人博客（五） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="上一篇我们介绍了如何切换到流行的Next主题，这篇我们来详细介绍一下Next主题的配置文件中都提供了哪些配置内容供我们定制化">
 <meta name="keywords" content="blog,tutorial,hexo">
 <meta property="og:type" content="article">
@@ -126,380 +31,81 @@
 <meta name="twitter:title" content="手摸手教你用github和hexo搭建个人博客（五）">
 <meta name="twitter:description" content="上一篇我们介绍了如何切换到流行的Next主题，这篇我们来详细介绍一下Next主题的配置文件中都提供了哪些配置内容供我们定制化">
 <meta name="twitter:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/next.png">
-
-
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/04/26/create-personal-blog-with-github-and-hexo.V/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>手摸手教你用github和hexo搭建个人博客（五） | Hexo</title>
   
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">my blog</a>
+        </h2>
+      
     </div>
-      
-        <p class="site-subtitle">my blog</p>
-      
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-create-personal-blog-with-github-and-hexo.V" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/26/create-personal-blog-with-github-and-hexo.V/" class="article-date">
+  <time datetime="2018-04-25T16:00:00.000Z" itemprop="datePublished">2018-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/blog/">blog</a>►<a class="article-category-link" href="/categories/blog/hexo/">hexo</a>►<a class="article-category-link" href="/categories/blog/hexo/tutorial/">tutorial</a>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">6</span></a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">3</span></a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">3</span></a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-    <a href="/sitemap.xml" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-    <a href="/404/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
+  <div class="article-inner">
     
-  
-  
-  
     
-      
-    
-    <a href="https://github.com/RunningCoderLee" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
-
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/create-personal-blog-with-github-and-hexo.V/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/2.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">手摸手教你用github和hexo搭建个人博客（五）
-              
-            
-          </h1>
-        
+  
+    <h1 class="article-title" itemprop="name">
+      手摸手教你用github和hexo搭建个人博客（五）
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-26T00:00:00+08:00">2018-04-26</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-04-30 16:33:58" itemprop="dateModified" datetime="2018-04-30T16:33:58+08:00">2018-04-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/blog/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/blog/hexo/tutorial/" itemprop="url" rel="index"><span itemprop="name">tutorial</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">13k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">12 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry" itemprop="articleBody">
       
         <p>上一篇我们介绍了如何切换到流行的<code>Next</code>主题，这篇我们来详细介绍一下<code>Next</code>主题的配置文件中都提供了哪些配置内容供我们定制化</p>
 <p><img src="/images/create-personal-blog-with-github-and-hexo/next.png"></p>
@@ -901,553 +507,136 @@
 
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>如果此文有帮助到你，你可以选择请我喝杯☕️ ，感谢你对我分享内容的认可😃</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechat-collect.png" alt="Kevin Lee 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay-collect.png" alt="Kevin Lee 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/blog/" rel="tag"># blog</a>
-          
-            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
-          
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-        </div>
-      
-
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/26/create-personal-blog-with-github-and-hexo.V/" data-id="cjgm26ueu0009rcbxp313kzoa" class="article-share-link">Share</a>
       
       
-      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/03/29/create-personal-blog-with-github-and-hexo.IIII./" rel="next" title="手摸手教你用github和hexo搭建个人博客（四）">
-                <i class="fa fa-chevron-left"></i> 手摸手教你用github和hexo搭建个人博客（四）
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
     </footer>
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/29/create-personal-blog-with-github-and-hexo.IIII./" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">手摸手教你用github和hexo搭建个人博客（四）</div>
+    </a>
+  
+</nav>
 
-      
+  
+</article>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/uploads/2.png"
-                alt="Kevin Lee" />
-            
-              <p class="site-author-name" itemprop="name">Kevin Lee</p>
-              <p class="site-description motion-element" itemprop="description">This is my own blog!</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">标签</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/RunningCoderLee" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com/" title="Title1" target="_blank">Title1</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com/" title="Title2" target="_blank">Title2</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com/" title="Title3" target="_blank">Title3</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据文件"><span class="nav-number">1.</span> <span class="nav-text">数据文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一"><span class="nav-number">1.1.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二"><span class="nav-number">1.2.</span> <span class="nav-text">方式二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置内容"><span class="nav-number">2.</span> <span class="nav-text">配置内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#next主题核心设置"><span class="nav-number">2.1.</span> <span class="nav-text">next主题核心设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#override"><span class="nav-number">2.1.1.</span> <span class="nav-text">override</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cache"><span class="nav-number">2.1.2.</span> <span class="nav-text">cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#custom-file-path"><span class="nav-number">2.1.3.</span> <span class="nav-text">custom_file_path</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页信息设置"><span class="nav-number">2.2.</span> <span class="nav-text">网页信息设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#favicon"><span class="nav-number">2.2.1.</span> <span class="nav-text">favicon</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#small"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">small</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#medium"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">medium</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#apple-touch-icon"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">apple_touch_icon</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#safari-pinned-tab"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">safari_pinned_tab</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#android-manifest"><span class="nav-number">2.2.1.5.</span> <span class="nav-text">android_manifest</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ms-browserconfig"><span class="nav-number">2.2.1.6.</span> <span class="nav-text">ms_browserconfig</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rss"><span class="nav-number">2.2.2.</span> <span class="nav-text">rss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#footer"><span class="nav-number">2.2.3.</span> <span class="nav-text">footer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#since"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">since</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#icon"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">icon</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#name"><span class="nav-number">2.2.3.2.1.</span> <span class="nav-text">name</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#animate"><span class="nav-number">2.2.3.2.2.</span> <span class="nav-text">animate</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#color"><span class="nav-number">2.2.3.2.3.</span> <span class="nav-text">color</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#copyright"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">copyright</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#powered"><span class="nav-number">2.2.3.4.</span> <span class="nav-text">powered</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#enable"><span class="nav-number">2.2.3.4.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Version"><span class="nav-number">2.2.3.4.2.</span> <span class="nav-text">Version</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#theme"><span class="nav-number">2.2.3.5.</span> <span class="nav-text">theme</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#enable-1"><span class="nav-number">2.2.3.5.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#version"><span class="nav-number">2.2.3.5.2.</span> <span class="nav-text">version</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#custom-text"><span class="nav-number">2.2.3.6.</span> <span class="nav-text">custom_text</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEO相关设置"><span class="nav-number">2.3.</span> <span class="nav-text">SEO相关设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#canonical"><span class="nav-number">2.3.1.</span> <span class="nav-text">canonical</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#seo"><span class="nav-number">2.3.2.</span> <span class="nav-text">seo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#index-with-subtitle"><span class="nav-number">2.3.3.</span> <span class="nav-text">index_with_subtitle</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单设置"><span class="nav-number">2.4.</span> <span class="nav-text">菜单设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#menu"><span class="nav-number">2.4.1.</span> <span class="nav-text">menu</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#home"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">home</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#about"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">about</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tags"><span class="nav-number">2.4.1.3.</span> <span class="nav-text">tags</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#categories"><span class="nav-number">2.4.1.4.</span> <span class="nav-text">categories</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#archives"><span class="nav-number">2.4.1.5.</span> <span class="nav-text">archives</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#schedule"><span class="nav-number">2.4.1.6.</span> <span class="nav-text">schedule</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sitemap"><span class="nav-number">2.4.1.7.</span> <span class="nav-text">sitemap</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#commonweal"><span class="nav-number">2.4.1.8.</span> <span class="nav-text">commonweal</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#menu-settings"><span class="nav-number">2.4.2.</span> <span class="nav-text">menu_settings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#icons"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">icons</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#badges"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">badges</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题设置"><span class="nav-number">2.5.</span> <span class="nav-text">主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scheme"><span class="nav-number">2.5.1.</span> <span class="nav-text">scheme</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏设置"><span class="nav-number">2.6.</span> <span class="nav-text">侧边栏设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#site-state"><span class="nav-number">2.6.1.</span> <span class="nav-text">site_state</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#social"><span class="nav-number">2.6.2.</span> <span class="nav-text">social</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#social-icons"><span class="nav-number">2.6.3.</span> <span class="nav-text">social_icons</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-2"><span class="nav-number">2.6.3.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#icons-only"><span class="nav-number">2.6.3.2.</span> <span class="nav-text">icons_only</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transition"><span class="nav-number">2.6.3.3.</span> <span class="nav-text">transition</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#exturl"><span class="nav-number">2.6.3.4.</span> <span class="nav-text">exturl</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github-banner"><span class="nav-number">2.6.4.</span> <span class="nav-text">github_banner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Blog-rolls"><span class="nav-number">2.6.5.</span> <span class="nav-text">Blog rolls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#links-icon"><span class="nav-number">2.6.6.</span> <span class="nav-text">links_icon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#links-title"><span class="nav-number">2.6.7.</span> <span class="nav-text">links_title</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#links-layout"><span class="nav-number">2.6.8.</span> <span class="nav-text">links_layout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#links"><span class="nav-number">2.6.9.</span> <span class="nav-text">links</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sidebar-Avatar"><span class="nav-number">2.6.10.</span> <span class="nav-text">Sidebar Avatar</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#avatar"><span class="nav-number">2.6.10.1.</span> <span class="nav-text">avatar</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toc（Table-Of-Contents-in-the-Sidebar）"><span class="nav-number">2.6.11.</span> <span class="nav-text">toc（Table Of Contents in the Sidebar）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-3"><span class="nav-number">2.6.11.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#number"><span class="nav-number">2.6.11.2.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wrap"><span class="nav-number">2.6.11.3.</span> <span class="nav-text">wrap</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#creative-commons"><span class="nav-number">2.6.12.</span> <span class="nav-text">creative_commons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sidebar"><span class="nav-number">2.6.13.</span> <span class="nav-text">Sidebar</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#position"><span class="nav-number">2.6.13.1.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#display"><span class="nav-number">2.6.13.2.</span> <span class="nav-text">display</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#offset"><span class="nav-number">2.6.13.3.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b2t"><span class="nav-number">2.6.13.4.</span> <span class="nav-text">b2t</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scrollpercent"><span class="nav-number">2.6.13.5.</span> <span class="nav-text">scrollpercent</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#onmobile"><span class="nav-number">2.6.13.6.</span> <span class="nav-text">onmobile</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章设置"><span class="nav-number">2.7.</span> <span class="nav-text">文章设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scroll-to-more"><span class="nav-number">2.7.1.</span> <span class="nav-text">scroll_to_more</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#save-scroll"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">save_scroll</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#excerpt-description"><span class="nav-number">2.7.2.</span> <span class="nav-text">excerpt_description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-excerpt"><span class="nav-number">2.7.3.</span> <span class="nav-text">auto_excerpt</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-4"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#length"><span class="nav-number">2.7.3.2.</span> <span class="nav-text">length</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#post-meta"><span class="nav-number">2.7.4.</span> <span class="nav-text">post_meta</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#item-text"><span class="nav-number">2.7.4.1.</span> <span class="nav-text">item_text</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#created-at"><span class="nav-number">2.7.4.2.</span> <span class="nav-text">created_at</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#updated-at"><span class="nav-number">2.7.4.3.</span> <span class="nav-text">updated_at</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#enabled"><span class="nav-number">2.7.4.3.1.</span> <span class="nav-text">enabled</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#another-day"><span class="nav-number">2.7.4.3.2.</span> <span class="nav-text">another_day</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#categories-1"><span class="nav-number">2.7.4.4.</span> <span class="nav-text">categories</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#symbols-count-time"><span class="nav-number">2.7.5.</span> <span class="nav-text">symbols_count_time</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#separated-meta"><span class="nav-number">2.7.5.1.</span> <span class="nav-text">separated_meta</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#item-text-post"><span class="nav-number">2.7.5.2.</span> <span class="nav-text">item_text_post</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#item-text-total"><span class="nav-number">2.7.5.3.</span> <span class="nav-text">item_text_total</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#awl"><span class="nav-number">2.7.5.4.</span> <span class="nav-text">awl</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wpm"><span class="nav-number">2.7.5.5.</span> <span class="nav-text">wpm</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#codeblock"><span class="nav-number">2.7.6.</span> <span class="nav-text">codeblock</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#border-radius"><span class="nav-number">2.7.6.1.</span> <span class="nav-text">border_radius</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#copy-button"><span class="nav-number">2.7.6.2.</span> <span class="nav-text">copy_button</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wechat-subscriber"><span class="nav-number">2.7.7.</span> <span class="nav-text">wechat_subscriber</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enabled-1"><span class="nav-number">2.7.7.1.</span> <span class="nav-text">enabled</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#qcode"><span class="nav-number">2.7.7.2.</span> <span class="nav-text">qcode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#description"><span class="nav-number">2.7.7.3.</span> <span class="nav-text">description</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reward-comment"><span class="nav-number">2.7.8.</span> <span class="nav-text">reward_comment</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#wechatpay"><span class="nav-number">2.7.8.1.</span> <span class="nav-text">wechatpay</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#alipay"><span class="nav-number">2.7.8.2.</span> <span class="nav-text">alipay</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bitcoin"><span class="nav-number">2.7.8.3.</span> <span class="nav-text">bitcoin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关-热门文章"><span class="nav-number">2.8.</span> <span class="nav-text">相关/热门文章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#related-posts"><span class="nav-number">2.8.1.</span> <span class="nav-text">related_posts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-5"><span class="nav-number">2.8.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#title"><span class="nav-number">2.8.1.2.</span> <span class="nav-text">title</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#display-in-home"><span class="nav-number">2.8.1.3.</span> <span class="nav-text">display_in_home</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#params"><span class="nav-number">2.8.1.4.</span> <span class="nav-text">params</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#maxCount"><span class="nav-number">2.8.1.4.1.</span> <span class="nav-text">maxCount</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#PPMixingRate"><span class="nav-number">2.8.1.4.2.</span> <span class="nav-text">PPMixingRate</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#isDate"><span class="nav-number">2.8.1.4.3.</span> <span class="nav-text">isDate</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#isImage"><span class="nav-number">2.8.1.4.4.</span> <span class="nav-text">isImage</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#isExcerpt"><span class="nav-number">2.8.1.4.5.</span> <span class="nav-text">isExcerpt</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版权声明"><span class="nav-number">2.9.</span> <span class="nav-text">版权声明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#post-copyright"><span class="nav-number">2.9.1.</span> <span class="nav-text">post_copyright</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-6"><span class="nav-number">2.9.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#license"><span class="nav-number">2.9.1.2.</span> <span class="nav-text">license</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章编辑"><span class="nav-number">2.10.</span> <span class="nav-text">文章编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#post-edit"><span class="nav-number">2.10.1.</span> <span class="nav-text">post_edit</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-7"><span class="nav-number">2.10.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#url"><span class="nav-number">2.10.1.2.</span> <span class="nav-text">url</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其余主题设置"><span class="nav-number">2.11.</span> <span class="nav-text">其余主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mobile-layout-economy-false"><span class="nav-number">2.11.1.</span> <span class="nav-text">mobile_layout_economy: false</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#android-chrome-color"><span class="nav-number">2.11.2.</span> <span class="nav-text">android_chrome_color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#custom-logo"><span class="nav-number">2.11.3.</span> <span class="nav-text">custom_logo</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enabled-2"><span class="nav-number">2.11.3.1.</span> <span class="nav-text">enabled</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#image"><span class="nav-number">2.11.3.2.</span> <span class="nav-text">image</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#highlight-theme"><span class="nav-number">2.11.4.</span> <span class="nav-text">highlight_theme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cheers-enabled"><span class="nav-number">2.11.5.</span> <span class="nav-text">cheers_enabled</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-content-width"><span class="nav-number">2.11.6.</span> <span class="nav-text">max_content_width</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sidebar-width"><span class="nav-number">2.11.7.</span> <span class="nav-text">sidebar_width</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体设置"><span class="nav-number">2.12.</span> <span class="nav-text">字体设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#font"><span class="nav-number">2.12.1.</span> <span class="nav-text">font</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-8"><span class="nav-number">2.12.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#host"><span class="nav-number">2.12.1.2.</span> <span class="nav-text">host</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字体选项"><span class="nav-number">2.12.1.3.</span> <span class="nav-text">字体选项</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#external"><span class="nav-number">2.12.1.3.1.</span> <span class="nav-text">external</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#family"><span class="nav-number">2.12.1.3.2.</span> <span class="nav-text">family</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#size"><span class="nav-number">2.12.1.3.3.</span> <span class="nav-text">size</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#global"><span class="nav-number">2.12.1.3.4.</span> <span class="nav-text">global</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#heading"><span class="nav-number">2.12.1.3.5.</span> <span class="nav-text">heading</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#posts"><span class="nav-number">2.12.1.3.6.</span> <span class="nav-text">posts</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#logo"><span class="nav-number">2.12.1.3.7.</span> <span class="nav-text">logo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#codes"><span class="nav-number">2.12.1.3.8.</span> <span class="nav-text">codes</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方服务设置"><span class="nav-number">2.13.</span> <span class="nav-text">第三方服务设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#math"><span class="nav-number">2.13.1.</span> <span class="nav-text">math</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-9"><span class="nav-number">2.13.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#per-page"><span class="nav-number">2.13.1.2.</span> <span class="nav-text">per_page</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#engine-mathjax"><span class="nav-number">2.13.1.3.</span> <span class="nav-text">engine: mathjax</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mathjax"><span class="nav-number">2.13.1.4.</span> <span class="nav-text">mathjax</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#cdn"><span class="nav-number">2.13.1.4.1.</span> <span class="nav-text">cdn</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#katex"><span class="nav-number">2.13.1.4.2.</span> <span class="nav-text">katex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cdn-1"><span class="nav-number">2.13.1.4.3.</span> <span class="nav-text">cdn</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#han"><span class="nav-number">2.13.2.</span> <span class="nav-text">han</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pangu"><span class="nav-number">2.13.3.</span> <span class="nav-text">pangu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swiftype-key"><span class="nav-number">2.13.4.</span> <span class="nav-text">swiftype_key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#baidu-analytics"><span class="nav-number">2.13.5.</span> <span class="nav-text">baidu_analytics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#disqus"><span class="nav-number">2.13.6.</span> <span class="nav-text">disqus</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-10"><span class="nav-number">2.13.6.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#shortname"><span class="nav-number">2.13.6.2.</span> <span class="nav-text">shortname</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count"><span class="nav-number">2.13.6.3.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lazyload"><span class="nav-number">2.13.6.4.</span> <span class="nav-text">lazyload</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hypercomments-id"><span class="nav-number">2.13.7.</span> <span class="nav-text">hypercomments_id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#changyan"><span class="nav-number">2.13.8.</span> <span class="nav-text">changyan</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-11"><span class="nav-number">2.13.8.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#appid"><span class="nav-number">2.13.8.2.</span> <span class="nav-text">appid</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#appkey"><span class="nav-number">2.13.8.3.</span> <span class="nav-text">appkey</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Valine"><span class="nav-number">2.13.9.</span> <span class="nav-text">Valine</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-12"><span class="nav-number">2.13.9.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#appid-1"><span class="nav-number">2.13.9.2.</span> <span class="nav-text">appid</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#appkey-1"><span class="nav-number">2.13.9.3.</span> <span class="nav-text">appkey</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#notify"><span class="nav-number">2.13.9.4.</span> <span class="nav-text">notify</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#verify"><span class="nav-number">2.13.9.5.</span> <span class="nav-text">verify</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#placeholder"><span class="nav-number">2.13.9.6.</span> <span class="nav-text">placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#avatar-1"><span class="nav-number">2.13.9.7.</span> <span class="nav-text">avatar</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#guest-info"><span class="nav-number">2.13.9.8.</span> <span class="nav-text">guest_info</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pageSize"><span class="nav-number">2.13.9.9.</span> <span class="nav-text">pageSize</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#youyan-uid"><span class="nav-number">2.13.10.</span> <span class="nav-text">youyan_uid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#livere-uid"><span class="nav-number">2.13.11.</span> <span class="nav-text">livere_uid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gitment"><span class="nav-number">2.13.12.</span> <span class="nav-text">Gitment</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-13"><span class="nav-number">2.13.12.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mint"><span class="nav-number">2.13.12.2.</span> <span class="nav-text">mint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count-1"><span class="nav-number">2.13.12.3.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lazy"><span class="nav-number">2.13.12.4.</span> <span class="nav-text">lazy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cleanly"><span class="nav-number">2.13.12.5.</span> <span class="nav-text">cleanly</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#language"><span class="nav-number">2.13.12.6.</span> <span class="nav-text">language</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#github-user"><span class="nav-number">2.13.12.7.</span> <span class="nav-text">github_user</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#github-repo"><span class="nav-number">2.13.12.8.</span> <span class="nav-text">github_repo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#client-id"><span class="nav-number">2.13.12.9.</span> <span class="nav-text">client_id</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#client-secret"><span class="nav-number">2.13.12.10.</span> <span class="nav-text">client_secret</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#proxy-gateway"><span class="nav-number">2.13.12.11.</span> <span class="nav-text">proxy_gateway</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#redirect-protocol"><span class="nav-number">2.13.12.12.</span> <span class="nav-text">redirect_protocol</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#baidushare"><span class="nav-number">2.13.13.</span> <span class="nav-text">baidushare</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#type"><span class="nav-number">2.13.13.1.</span> <span class="nav-text">type</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jiathis"><span class="nav-number">2.13.14.</span> <span class="nav-text">jiathis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#uid"><span class="nav-number">2.13.14.1.</span> <span class="nav-text">uid</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#add-this-id"><span class="nav-number">2.13.15.</span> <span class="nav-text">add_this_id</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NeedMoreShare2"><span class="nav-number"></span> <span class="nav-text">NeedMoreShare2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dependencies-https-github-com-theme-next-theme-next-needmoreshare2"><span class="nav-number"></span> <span class="nav-text">Dependencies: https://github.com/theme-next/theme-next-needmoreshare2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#See-https-github-com-revir-need-more-share2"><span class="nav-number"></span> <span class="nav-text">See: https://github.com/revir/need-more-share2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Also-see-https-github-com-DzmVasileusky-needShareButton"><span class="nav-number"></span> <span class="nav-text">Also see: https://github.com/DzmVasileusky/needShareButton</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iconStyle-default-box"><span class="nav-number"></span> <span class="nav-text">iconStyle: default | box</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#boxForm-horizontal-vertical"><span class="nav-number"></span> <span class="nav-text">boxForm: horizontal | vertical</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#position-top-middle-bottom-Left-Center-Right"><span class="nav-number"></span> <span class="nav-text">position: top / middle / bottom + Left / Center / Right</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#networks-Weibo-Wechat-Douban-QQZone-Twitter-Linkedin-Mailto-Reddit"><span class="nav-number"></span> <span class="nav-text">networks: Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delicious-StumbleUpon-Pinterest-Facebook-GooglePlus-Slashdot"><span class="nav-number"></span> <span class="nav-text">Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,Slashdot,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Technorati-Posterous-Tumblr-GoogleBookmarks-Newsvine"><span class="nav-number"></span> <span class="nav-text">Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Evernote-Friendfeed-Vkontakte-Odnoklassniki-Mailru"><span class="nav-number"></span> <span class="nav-text">Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#needmoreshare2"><span class="nav-number">0.0.1.</span> <span class="nav-text">needmoreshare2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-14"><span class="nav-number">0.0.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#postbottom"><span class="nav-number">0.0.1.2.</span> <span class="nav-text">postbottom</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#enable-15"><span class="nav-number">0.0.1.2.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#options"><span class="nav-number">0.0.1.2.2.</span> <span class="nav-text">options</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#float"><span class="nav-number">0.0.1.3.</span> <span class="nav-text">float</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#enable-16"><span class="nav-number">0.0.1.3.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#options-1"><span class="nav-number">0.0.1.3.2.</span> <span class="nav-text">options</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#google-site-verification"><span class="nav-number">0.0.2.</span> <span class="nav-text">google_site_verification</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#google-analytics"><span class="nav-number">0.0.3.</span> <span class="nav-text">google_analytics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bing-site-verification"><span class="nav-number">0.0.4.</span> <span class="nav-text">bing_site_verification:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Yandex-Webmaster-tools-verification-setting"><span class="nav-number"></span> <span class="nav-text">Yandex Webmaster tools verification setting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#See-https-webmaster-yandex-ru"><span class="nav-number"></span> <span class="nav-text">See: https://webmaster.yandex.ru/</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cnzz-siteid"><span class="nav-number">0.0.1.</span> <span class="nav-text">cnzz_siteid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#application-insights"><span class="nav-number">0.0.2.</span> <span class="nav-text">application_insights</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章小部件和FB-VK-评论设置"><span class="nav-number">0.1.</span> <span class="nav-text">文章小部件和FB/VK 评论设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#facebook-sdk"><span class="nav-number">0.1.1.</span> <span class="nav-text">facebook_sdk</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-17"><span class="nav-number">0.1.1.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#app-id"><span class="nav-number">0.1.1.2.</span> <span class="nav-text">app_id</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fb-admin"><span class="nav-number">0.1.1.3.</span> <span class="nav-text">fb_admin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#like-button"><span class="nav-number">0.1.1.4.</span> <span class="nav-text">like_button</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webmaster"><span class="nav-number">0.1.1.5.</span> <span class="nav-text">webmaster</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#facebook-comments-plugin"><span class="nav-number">0.1.2.</span> <span class="nav-text">facebook_comments_plugin</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-18"><span class="nav-number">0.1.2.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#num-of-posts"><span class="nav-number">0.1.2.2.</span> <span class="nav-text">num_of_posts</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#width"><span class="nav-number">0.1.2.3.</span> <span class="nav-text">width</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scheme-1"><span class="nav-number">0.1.2.4.</span> <span class="nav-text">scheme</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vkontakte-api"><span class="nav-number">0.1.3.</span> <span class="nav-text">vkontakte_api</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-19"><span class="nav-number">0.1.3.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#app-id-1"><span class="nav-number">0.1.3.2.</span> <span class="nav-text">app_id</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#like"><span class="nav-number">0.1.3.3.</span> <span class="nav-text">like</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#comments"><span class="nav-number">0.1.3.4.</span> <span class="nav-text">comments</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#num-of-posts-1"><span class="nav-number">0.1.3.5.</span> <span class="nav-text">num_of_posts</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rating"><span class="nav-number">0.1.4.</span> <span class="nav-text">rating</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enable-20"><span class="nav-number">0.1.5.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id"><span class="nav-number">0.1.6.</span> <span class="nav-text">id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#color-1"><span class="nav-number">0.1.7.</span> <span class="nav-text">color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#leancloud-visitors"><span class="nav-number">0.1.8.</span> <span class="nav-text">leancloud_visitors</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#enable-21"><span class="nav-number">0.1.8.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#app-id-2"><span class="nav-number">0.1.8.2.</span> <span class="nav-text">app_id</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#app-key"><span class="nav-number">0.1.8.3.</span> <span class="nav-text">app_key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#security"><span class="nav-number">0.1.8.4.</span> <span class="nav-text">security</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#betterPerformance"><span class="nav-number">0.1.8.5.</span> <span class="nav-text">betterPerformance</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
-
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/hexo/">hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/hexo/tutorial/">tutorial</a></li></ul></li></ul></li></ul>
     </div>
-  </aside>
+  </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/26/create-personal-blog-with-github-and-hexo.V/">手摸手教你用github和hexo搭建个人博客（五）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/29/create-personal-blog-with-github-and-hexo.IIII./">手摸手教你用github和hexo搭建个人博客（四）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/">手摸手教你用github和hexo搭建个人博客（番外篇）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/">手摸手教你用github和hexo搭建个人博客（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.III/">手摸手教你用github和hexo搭建个人博客（三）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
         
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kevin Lee</span>
-
+      <footer id="footer">
   
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">21k</span>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Kevin Lee<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">19 分钟</span>
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-</div>
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.6.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+</nav>
     
 
-    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
 
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-      .copy-btn {
-          display: inline-block;
-          padding: 6px 12px;
-          font-size: 13px;
-          font-weight: 700;
-          line-height: 20px;
-          color: #333;
-          white-space: nowrap;
-          vertical-align: middle;
-          cursor: pointer;
-          background-color: #eee;
-          background-image: linear-gradient(#fcfcfc, #eee);
-          border: 1px solid #d5d5d5;
-          border-radius: 3px;
-          user-select: none;
-      }
-
-      .highlight-wrap .copy-btn {
-          transition: opacity .3s ease-in-out;
-          opacity: 0;
-          padding: 2px 6px;
-          position: absolute;
-          right: 4px;
-          top: 8px;
-      }
-
-      .highlight-wrap:hover .copy-btn,
-      .highlight-wrap .copy-btn:focus {
-          opacity: 1
-      }
-
-      .highlight-wrap {
-          position: relative;
-      }
-  </style>
-  <script>
-      $('.highlight').each(function(i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
-                  return $(e).text()
-              }).toArray().join('\n')
-              var ta = document.createElement('textarea')
-              document.body.appendChild(ta)
-              ta.style.position = 'fixed'
-              ta.style.top = 0
-              ta.style.left = 0
-              ta.value = code
-              ta.select()
-              ta.focus()
-              document.execCommand('copy')
-              document.body.removeChild(ta)
-          })).append(e)
-      })
-  </script>
-
-
 </body>
 </html>
