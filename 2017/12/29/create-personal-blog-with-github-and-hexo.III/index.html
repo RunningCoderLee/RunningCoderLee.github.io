@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="9ga1CK8q3xexIaVp-xciR1_t2wafPGgDGEO8SOC_bfQ" />
+
+
+
+  <meta name="msvalidate.01" content="634BB8EE2709A55435368D03BDAC2A6A" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Fira Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="上一篇我们介绍了如何用Hexo来创建博客以及如何将博客内容部署到Github仓库里，这篇我们会详细说明Hexo框架内的_config.yml文件中的设置项都能带来哪些改变 下面的内容是Hexo初始化项目后的_config.yml中全部内容 12345678910111213141516171819202122232425262728293031323334353637383940414243444">
+<meta name="keywords" content="blog,tutorial,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手摸手教你用github和hexo搭建个人博客（三）">
+<meta property="og:url" content="http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.III/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="上一篇我们介绍了如何用Hexo来创建博客以及如何将博客内容部署到Github仓库里，这篇我们会详细说明Hexo框架内的_config.yml文件中的设置项都能带来哪些改变 下面的内容是Hexo初始化项目后的_config.yml中全部内容 12345678910111213141516171819202122232425262728293031323334353637383940414243444">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/config-site.png">
+<meta property="og:updated_time" content="2018-03-27T12:39:53.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手摸手教你用github和hexo搭建个人博客（三）">
+<meta name="twitter:description" content="上一篇我们介绍了如何用Hexo来创建博客以及如何将博客内容部署到Github仓库里，这篇我们会详细说明Hexo框架内的_config.yml文件中的设置项都能带来哪些改变 下面的内容是Hexo初始化项目后的_config.yml中全部内容 12345678910111213141516171819202122232425262728293031323334353637383940414243444">
+<meta name="twitter:image" content="http://yoursite.com/images/create-personal-blog-with-github-and-hexo/config-site.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.III/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>手摸手教你用github和hexo搭建个人博客（三） | Hexo</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79368773-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79368773-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?939cf92800d7c6b3e49093aae5a9227d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">my blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">6</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">3</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">3</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+    <a href="/404/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/RunningCoderLee" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kevin Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/2.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">手摸手教你用github和hexo搭建个人博客（三）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-29 00:00:00" itemprop="dateCreated datePublished" datetime="2017-12-29T00:00:00+08:00">2017-12-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-27 20:39:53" itemprop="dateModified" datetime="2018-03-27T20:39:53+08:00">2018-03-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/blog/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/blog/hexo/tutorial/" itemprop="url" rel="index"><span itemprop="name">tutorial</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/29/create-personal-blog-with-github-and-hexo.III/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/29/create-personal-blog-with-github-and-hexo.III/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/29/create-personal-blog-with-github-and-hexo.III/" class="leancloud_visitors" data-flag-title="手摸手教你用github和hexo搭建个人博客（三）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>上一篇我们介绍了如何用<code>Hexo</code>来创建博客以及如何将博客内容部署到<code>Github</code>仓库里，这篇我们会详细说明<code>Hexo</code>框架内的<code>_config.yml</code>文件中的设置项都能带来哪些改变</p>
+<p>下面的内容是<code>Hexo</code>初始化项目后的<code>_config.yml</code>中全部内容</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sitejit</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line"><span class="attr">description:</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span></span><br><span class="line"><span class="attr">language:</span></span><br><span class="line"><span class="attr">timezone:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  tab_replace:</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">  order_by:</span> <span class="bullet">-date</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="attr">HH:mm:ss</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h2><h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>网站的标题，大多数情况下会被用来显示在浏览器的标签页上以及首页（具体由各主题决定）</p>
+<p><img src="/images/create-personal-blog-with-github-and-hexo/config-site.png"></p>
+<h3 id="Subtitle"><a href="#Subtitle" class="headerlink" title="Subtitle"></a>Subtitle</h3><p><strong>注意：</strong> 首字母要小写，这里因为是关键字跟主题样式冲突，故首字母大小</p>
+<p>网站的副标题，大多数情况下会被用来显示在首页（具体由各主题决定）</p>
+<h3 id="description"><a href="#description" class="headerlink" title="description"></a>description</h3><p>网站描述内容，某些主题可能会显示</p>
+<h3 id="keywords"><a href="#keywords" class="headerlink" title="keywords"></a>keywords</h3><p>关键字，某些主题可能会在SEO时使用</p>
+<h3 id="author"><a href="#author" class="headerlink" title="author"></a>author</h3><p>作者姓名，大多数情况下会显示在页面底部或文章底部（具体由各主题决定）</p>
+<h3 id="language"><a href="#language" class="headerlink" title="language"></a>language</h3><p>你的网页所使用的语言，参照<a href="https://zh.wikipedia.org/wiki/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8" target="_blank" rel="noopener">ISO 639-1代码表</a>, 默认值是<code>en</code></p>
+<h3 id="timezone"><a href="#timezone" class="headerlink" title="timezone"></a>timezone</h3><p>所在时区，默认使用你电脑设置的时区，也可以参照<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区对照表</a>进行修改，如<code>America/New_York</code>, <code>Japan</code>, 和<code>UTC</code></p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><h3 id="url"><a href="#url" class="headerlink" title="url"></a>url</h3><p>你的博客对应的URL，如果你的博客在一个子文件夹内，比如<code>http://example.org/blog</code>，那么这里需要把<code>URL</code>设置成<code>http://example.org/blog</code>，同时要把下面的<code>root</code>设置为<code>/blog/</code></p>
+<h3 id="root"><a href="#root" class="headerlink" title="root"></a>root</h3><p>你的博客对应的根路径，如果你的博客在一个子文件夹内，比如<code>http://example.org/blog</code>，那么这里需要把要把<code>root</code>设置为<code>/blog/</code>，同时要把上面的<code>URL</code>设置成<code>http://example.org/blog</code></p>
+<h3 id="permalink"><a href="#permalink" class="headerlink" title="permalink"></a>permalink</h3><p>文章永久链接的格式，默认设置为<code>:year/:month/:day/:title/</code>，默认提供如下变量</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:year</code></td>
+<td>发布年份（4位数字）</td>
+</tr>
+<tr>
+<td><code>:month</code></td>
+<td>发布月份（2位数字）</td>
+</tr>
+<tr>
+<td><code>:i_month</code></td>
+<td>发布月份（去除前面的占位0</td>
+</tr>
+<tr>
+<td><code>:day</code></td>
+<td>发布日期（2位数字）</td>
+</tr>
+<tr>
+<td><code>:i_day</code></td>
+<td>发布日期（去除前面的占位0）</td>
+</tr>
+<tr>
+<td><code>:title</code></td>
+<td>文件名</td>
+</tr>
+<tr>
+<td><code>:id</code></td>
+<td>发布id</td>
+</tr>
+<tr>
+<td><code>:category</code></td>
+<td>分类，如果发布的文章没有包含分类信息，则会使用<code>default_category</code>的值</td>
+</tr>
+</tbody>
+</table>
+<p>更多设置请参考<a href="https://hexo.io/docs/permalinks.html" target="_blank" rel="noopener">这里</a></p>
+<h3 id="permalink-defaults"><a href="#permalink-defaults" class="headerlink" title="permalink_defaults"></a>permalink_defaults</h3><p>文章永久链接中各部分的默认值</p>
+<h2 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h2><h3 id="source-dir"><a href="#source-dir" class="headerlink" title="source_dir"></a>source_dir</h3><p>存储你原始内容的文件夹</p>
+<h3 id="public-dir"><a href="#public-dir" class="headerlink" title="public_dir"></a>public_dir</h3><p>编译后生成静态文件的文件夹</p>
+<h3 id="tag-dir"><a href="#tag-dir" class="headerlink" title="tag_dir"></a>tag_dir</h3><p>标签文件夹</p>
+<h3 id="archive-dir"><a href="#archive-dir" class="headerlink" title="archive_dir"></a>archive_dir</h3><p>归档文件夹</p>
+<h3 id="category-dir"><a href="#category-dir" class="headerlink" title="category_dir"></a>category_dir</h3><p>分类文件夹</p>
+<h3 id="code-dir"><a href="#code-dir" class="headerlink" title="code_dir"></a>code_dir</h3><p>包含代码的文件夹，<code>source_dir</code>的子文件夹</p>
+<h3 id="i18n-dir"><a href="#i18n-dir" class="headerlink" title="i18n_dir"></a>i18n_dir</h3><p><a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8C%96%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%8C%96" target="_blank" rel="noopener">i18n</a> 文件夹</p>
+<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip_render"></a>skip_render</h3><p>跳过指定文件的渲染，你可以使用<a href="https://github.com/isaacs/minimatch" target="_blank" rel="noopener">glob expressions</a>来匹配路径</p>
+<h2 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h2><h3 id="new-post-name"><a href="#new-post-name" class="headerlink" title="new_post_name"></a>new_post_name</h3><p>新文章的名称</p>
+<h3 id="default-layout"><a href="#default-layout" class="headerlink" title="default_layout"></a>default_layout</h3><p>预设布局</p>
+<h3 id="titlecase"><a href="#titlecase" class="headerlink" title="titlecase"></a>titlecase</h3><p>是否把标题转换为title case形式</p>
+<h3 id="external-link"><a href="#external-link" class="headerlink" title="external_link"></a>external_link</h3><p>是否在新窗口打开外部链接</p>
+<h3 id="filename-case"><a href="#filename-case" class="headerlink" title="filename_case"></a>filename_case</h3><p>把标题转换为1（小写）；2（大写）</p>
+<h3 id="render-drafts"><a href="#render-drafts" class="headerlink" title="render_drafts"></a>render_drafts</h3><p>是否显示草稿</p>
+<h3 id="post-asset-folder"><a href="#post-asset-folder" class="headerlink" title="post_asset_folder"></a>post_asset_folder</h3><p>是否启用<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">Asset Folder</a></p>
+<h3 id="relative-link"><a href="#relative-link" class="headerlink" title="relative_link"></a>relative_link</h3><p>是否把链接改为相对根目录的相对路径</p>
+<h3 id="future"><a href="#future" class="headerlink" title="future"></a>future</h3><p>是否显示未来的文章</p>
+<h3 id="highlight"><a href="#highlight" class="headerlink" title="highlight"></a>highlight</h3><p>代码块的相关设置</p>
+<h4 id="enable"><a href="#enable" class="headerlink" title="enable"></a>enable</h4><p>是否启用</p>
+<h4 id="line-number"><a href="#line-number" class="headerlink" title="line_number"></a>line_number</h4><p>是否显示行号</p>
+<h4 id="auto-detect"><a href="#auto-detect" class="headerlink" title="auto_detect"></a>auto_detect</h4><p>是否启用自动检测</p>
+<h4 id="tab-replace"><a href="#tab-replace" class="headerlink" title="tab_replace"></a>tab_replace</h4><p>制表符替换</p>
+<h2 id="Home-page-setting"><a href="#Home-page-setting" class="headerlink" title="Home page setting"></a>Home page setting</h2><h3 id="index-generator"><a href="#index-generator" class="headerlink" title="index_generator"></a>index_generator</h3><h4 id="path"><a href="#path" class="headerlink" title="path"></a>path</h4><p>博客首页的根路径</p>
+<h4 id="per-page"><a href="#per-page" class="headerlink" title="per_page"></a>per_page</h4><p>每页显示的文章数，<code>0</code>代表禁止分页（仅针对首页）</p>
+<h4 id="order-by"><a href="#order-by" class="headerlink" title="order_by"></a>order_by</h4><p>排序规则（仅针对首页）</p>
+<h2 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h2><h3 id="default-category"><a href="#default-category" class="headerlink" title="default_category"></a>default_category</h3><p>默认分类</p>
+<h3 id="category-map"><a href="#category-map" class="headerlink" title="category_map"></a>category_map</h3><p>分类别名</p>
+<h3 id="tag-map"><a href="#tag-map" class="headerlink" title="tag_map"></a>tag_map</h3><p>标签别名</p>
+<h2 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h2><h3 id="date-format"><a href="#date-format" class="headerlink" title="date_format"></a>date_format</h3><p>日期格式</p>
+<h3 id="time-format"><a href="#time-format" class="headerlink" title="time_format"></a>time_format</h3><p>时间格式</p>
+<h2 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h2><h3 id="per-page-1"><a href="#per-page-1" class="headerlink" title="per_page"></a>per_page</h3><p>每页显示的文章数，<code>0</code>代表禁止分页</p>
+<h3 id="pagination-dir"><a href="#pagination-dir" class="headerlink" title="pagination_dir"></a>pagination_dir</h3><p>分页目录</p>
+<h2 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h2><h3 id="theme"><a href="#theme" class="headerlink" title="theme"></a>theme</h3><p>当前主题名称，<code>false</code>代表禁用主题</p>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h3><p>部署相关配置</p>
+<h5 id="type"><a href="#type" class="headerlink" title="type"></a>type</h5><p>类型</p>
+<p>以上是关于<code>Hexo</code>项目根目录下<code>_config.yml</code>文件的设置解释，下一篇我们会讲解如何将我们的博客主题切换到流行的<a href="https://theme-next.org/" target="_blank" rel="noopener">Next</a>主题</p>
+<p>（完）</p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo.II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（番外篇）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018/03/29/create-personal-blog-with-github-and-hexo.IIII./" rel="bookmark">手摸手教你用github和hexo搭建个人博客（四）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018/04/26/create-personal-blog-with-github-and-hexo.V/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（五）</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果此文有帮助到你，你可以选择请我喝杯☕️ ，感谢你对我分享内容的认可😃</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-collect.png" alt="Kevin Lee 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-collect.png" alt="Kevin Lee 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Kevin Lee</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.III/" title="手摸手教你用github和hexo搭建个人博客（三）">http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.III/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/28/create-personal-blog-with-github-and-hexo.I/" rel="next" title="手摸手教你用github和hexo搭建个人博客（一）">
+                <i class="fa fa-chevron-left"></i> 手摸手教你用github和hexo搭建个人博客（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="prev" title="手摸手教你用github和hexo搭建个人博客（番外篇）">
+                手摸手教你用github和hexo搭建个人博客（番外篇） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/2.png"
+                alt="Kevin Lee" />
+            
+              <p class="site-author-name" itemprop="name">Kevin Lee</p>
+              <p class="site-description motion-element" itemprop="description">This is my own blog!</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/RunningCoderLee" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title1" target="_blank">Title1</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title2" target="_blank">Title2</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title3" target="_blank">Title3</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Site"><span class="nav-number">1.</span> <span class="nav-text">Site</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#title"><span class="nav-number">1.1.</span> <span class="nav-text">title</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subtitle"><span class="nav-number">1.2.</span> <span class="nav-text">Subtitle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#description"><span class="nav-number">1.3.</span> <span class="nav-text">description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keywords"><span class="nav-number">1.4.</span> <span class="nav-text">keywords</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#author"><span class="nav-number">1.5.</span> <span class="nav-text">author</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#language"><span class="nav-number">1.6.</span> <span class="nav-text">language</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#timezone"><span class="nav-number">1.7.</span> <span class="nav-text">timezone</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">2.</span> <span class="nav-text">URL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#url"><span class="nav-number">2.1.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#root"><span class="nav-number">2.2.</span> <span class="nav-text">root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#permalink"><span class="nav-number">2.3.</span> <span class="nav-text">permalink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#permalink-defaults"><span class="nav-number">2.4.</span> <span class="nav-text">permalink_defaults</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directory"><span class="nav-number">3.</span> <span class="nav-text">Directory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#source-dir"><span class="nav-number">3.1.</span> <span class="nav-text">source_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public-dir"><span class="nav-number">3.2.</span> <span class="nav-text">public_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag-dir"><span class="nav-number">3.3.</span> <span class="nav-text">tag_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#archive-dir"><span class="nav-number">3.4.</span> <span class="nav-text">archive_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#category-dir"><span class="nav-number">3.5.</span> <span class="nav-text">category_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code-dir"><span class="nav-number">3.6.</span> <span class="nav-text">code_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i18n-dir"><span class="nav-number">3.7.</span> <span class="nav-text">i18n_dir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#skip-render"><span class="nav-number">3.8.</span> <span class="nav-text">skip_render</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Writing"><span class="nav-number">4.</span> <span class="nav-text">Writing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-post-name"><span class="nav-number">4.1.</span> <span class="nav-text">new_post_name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#default-layout"><span class="nav-number">4.2.</span> <span class="nav-text">default_layout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#titlecase"><span class="nav-number">4.3.</span> <span class="nav-text">titlecase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#external-link"><span class="nav-number">4.4.</span> <span class="nav-text">external_link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filename-case"><span class="nav-number">4.5.</span> <span class="nav-text">filename_case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render-drafts"><span class="nav-number">4.6.</span> <span class="nav-text">render_drafts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-asset-folder"><span class="nav-number">4.7.</span> <span class="nav-text">post_asset_folder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relative-link"><span class="nav-number">4.8.</span> <span class="nav-text">relative_link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#future"><span class="nav-number">4.9.</span> <span class="nav-text">future</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#highlight"><span class="nav-number">4.10.</span> <span class="nav-text">highlight</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#enable"><span class="nav-number">4.10.1.</span> <span class="nav-text">enable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#line-number"><span class="nav-number">4.10.2.</span> <span class="nav-text">line_number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-detect"><span class="nav-number">4.10.3.</span> <span class="nav-text">auto_detect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tab-replace"><span class="nav-number">4.10.4.</span> <span class="nav-text">tab_replace</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Home-page-setting"><span class="nav-number">5.</span> <span class="nav-text">Home page setting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#index-generator"><span class="nav-number">5.1.</span> <span class="nav-text">index_generator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#path"><span class="nav-number">5.1.1.</span> <span class="nav-text">path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#per-page"><span class="nav-number">5.1.2.</span> <span class="nav-text">per_page</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#order-by"><span class="nav-number">5.1.3.</span> <span class="nav-text">order_by</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Category-amp-Tag"><span class="nav-number">6.</span> <span class="nav-text">Category &amp; Tag</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#default-category"><span class="nav-number">6.1.</span> <span class="nav-text">default_category</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#category-map"><span class="nav-number">6.2.</span> <span class="nav-text">category_map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag-map"><span class="nav-number">6.3.</span> <span class="nav-text">tag_map</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Date-Time-format"><span class="nav-number">7.</span> <span class="nav-text">Date / Time format</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#date-format"><span class="nav-number">7.1.</span> <span class="nav-text">date_format</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-format"><span class="nav-number">7.2.</span> <span class="nav-text">time_format</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pagination"><span class="nav-number">8.</span> <span class="nav-text">Pagination</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#per-page-1"><span class="nav-number">8.1.</span> <span class="nav-text">per_page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pagination-dir"><span class="nav-number">8.2.</span> <span class="nav-text">pagination_dir</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extensions"><span class="nav-number">9.</span> <span class="nav-text">Extensions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#theme"><span class="nav-number">9.1.</span> <span class="nav-text">theme</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deployment"><span class="nav-number">10.</span> <span class="nav-text">Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy"><span class="nav-number">10.1.</span> <span class="nav-text">deploy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#type"><span class="nav-number">10.1.0.1.</span> <span class="nav-text">type</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kevin Lee</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">21k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">19 分钟</span>
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.6.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273573974&web_id=1273573974" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://runningcoder.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2017/12/29/create-personal-blog-with-github-and-hexo.III/';
+        this.page.identifier = '2017/12/29/create-personal-blog-with-github-and-hexo.III/';
+        this.page.title = '手摸手教你用github和hexo搭建个人博客（三）';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://runningcoder.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("QwkK3nn4i0Di78LtixPeKqyG-gzGzoHsz", "mMpbTaF8d9Vy0zLyLLChpVhi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8595,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script>
+
+
+</body>
+</html>
