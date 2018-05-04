@@ -20,6 +20,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -51,6 +58,10 @@
 
 
 
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -116,9 +127,9 @@
     scheme: 'Gemini',
     version: '6.2.0',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -282,7 +293,7 @@
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
+    <a href="/archives" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
         
@@ -290,7 +301,7 @@
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
+    <a href="/categories" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
         
@@ -298,7 +309,7 @@
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
+    <a href="/tags" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
 
@@ -602,6 +613,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
       
     </li>
@@ -609,7 +627,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
+      <div class="popular-posts-title"><a href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（五）</a></div>
       
     </li>
   
@@ -624,13 +642,6 @@
       
       
       <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（番外篇）</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（五）</a></div>
       
     </li>
   
@@ -823,7 +834,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
@@ -835,7 +846,7 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  
+                  <a href="/categories/index.html">
                     
                     
                       
@@ -846,7 +857,7 @@
                     
                     <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
-                  
+                  </a>
                 </div>
               
 
@@ -854,7 +865,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -865,7 +876,7 @@
                     
                     <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -960,7 +971,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">25k</span>
   
 
   
@@ -971,7 +982,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
   
 </div>
 
@@ -1028,12 +1039,18 @@
 
 
 
+  
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
@@ -1056,12 +1073,27 @@
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
 
@@ -1315,10 +1347,12 @@
   
   
   
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+    
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@latest/bookmark.min.js"></script>
   <script type="text/javascript">
   
-    bookmark.scrollToMark('auto', "#更多");
+    bookmark.scrollToMark('manual', "#更多");
   
   </script>
 
