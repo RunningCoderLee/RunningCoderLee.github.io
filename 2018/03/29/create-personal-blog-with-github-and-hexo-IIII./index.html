@@ -237,7 +237,7 @@
   </style>
 </noscript>
 
-</head>
+<link rel="stylesheet" href="/css/prism-darcula.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -588,17 +588,31 @@
 <a id="more"></a>
 <h2 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h2><p>这里我们以6.0的版本为例，<code>Next</code>主题从6.0版本开始更换了代码仓库的位置，移到了<a href="https://github.com/theme-next/hexo-theme-next?1522323581558&amp;1522323598792" target="_blank" rel="noopener">这里</a>，原因大致是原来属于个人名下，现在专门移到了<code>theme-next</code>这个组织里</p>
 <p>安装过程很简单，先进入我们的hexo项目目录下，接着直接通过<code>git</code>拉取远端仓库即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd hexo</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">$ cd hexo
+$ git clone https://github.com/theme-next/hexo-theme-next themes/next
+</code></pre>
 <h2 id="启用Next"><a href="#启用Next" class="headerlink" title="启用Next"></a>启用Next</h2><p>打开根目录下的<code>_config.yml</code>文件，将里面的<code>theme</code>的值改为next即可</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next
+</code></pre>
 <h2 id="更新Next"><a href="#更新Next" class="headerlink" title="更新Next"></a>更新Next</h2><p>如果想要更新最新的<code>Next</code>主题特性也很简单，只要进入<code>next</code>主题所在文件夹，执行<code>git pull</code>命令即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd themes/next</span><br><span class="line"><span class="meta">$</span> git pull</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">$ cd themes/next
+$ git pull
+</code></pre>
 <p>有小伙伴肯定要说了，如果我想自己做一些定制化的改动，如何保证在更新的时候不会覆盖我改动的内容呢？</p>
 <p>这里需要先具备一点<code>Git</code>的基本知识，由于我们是通过<code>Git</code>将整个<code>Next</code>主题的代码库都拉到了本地，因此所有<code>Next</code>代码的更新以及我们个人所做的改动都可以通过<code>Git</code>本身来进行管理，所以我们可以单独切出来一个分支用来维护我们自己的定制更新，当<code>Next</code><br>主题有版本升级后，我们只需将最新的代码先更新到本地的<code>master</code>分支上，再通过<code>merge</code>命令合并到我们自己定制分支即可</p>
 <p>创建自己的定制分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd themes/next</span><br><span class="line"><span class="meta">$</span> git checkout -b self</span><br><span class="line"><span class="meta">#</span> 。。。一些定制化的修改</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -m '更改内容描述'</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">$ cd themes/next
+$ git checkout -b self
+# 。。。一些定制化的修改
+$ git add .
+$ git commit -m '更改内容描述'
+</code></pre>
 <p>升级最新代码并合入我们自己的定制分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git checkout master</span><br><span class="line"><span class="meta">$</span> git pull</span><br><span class="line"><span class="meta">$</span> git checkout self</span><br><span class="line"><span class="meta">$</span> git merge master</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">$ git checkout master
+$ git pull
+$ git checkout self
+$ git merge master
+</code></pre>
 <p>如果我们的改动和官方的更新有冲突，那么在<code>merge</code>的过程中要先解决冲突后才能进行合并。</p>
 <p>下一篇我们会具体讲解<code>Next</code>主题的配置文件<code>_config.yml</code>中都包含哪些配置项，以及他们能带来哪些效果</p>
 <p>（完）</p>
@@ -615,6 +629,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
       
     </li>
@@ -622,7 +643,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（三）</a></div>
       
     </li>
   
@@ -637,13 +658,6 @@
       
       
       <div class="popular-posts-title"><a href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（五）</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（三）</a></div>
       
     </li>
   
@@ -838,7 +852,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -857,7 +871,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -876,7 +896,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -973,7 +997,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">37k</span>
   
 
   
@@ -984,7 +1008,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   
 </div>
 
@@ -1219,7 +1243,7 @@
   
 
   
-  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("QwkK3nn4i0Di78LtixPeKqyG-gzGzoHsz", "mMpbTaF8d9Vy0zLyLLChpVhi");</script>
   <script>
     function showTime(Counter) {

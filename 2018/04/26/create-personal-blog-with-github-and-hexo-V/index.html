@@ -251,7 +251,7 @@
   </style>
 </noscript>
 
-</head>
+<link rel="stylesheet" href="/css/prism-darcula.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -612,7 +612,10 @@
 </ol>
 <p><code>Next</code>利用<code>Hexo</code>的数据文件特性很好的解决了这个问题，有下面两种方式供选择（敲黑板：确保你所使用的Hexo在3.0版本之上）</p>
 <h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p>将所有配置内容都放置在站点配置文件（<code>hexo/_config.yml</code>下同）中，并且不需要修改主题配置文件（<code>next/_config.yml</code>下同），但是所有的主题配置内容都必须放置在 <code>theme_config</code>之后，并全部增加两个空格的缩进</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line"><span class="attr">  scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next
+<span class="token key atrule">theme_config</span><span class="token punctuation">:</span>
+  <span class="token key atrule">scheme</span><span class="token punctuation">:</span> Gemini
+</code></pre>
 <p>如果新的release中新增了其他选项，那么你只需要把这些选项从<code>next/_config.yml</code>中复制到<code>hexo/config.yml</code>中并设置为你想配置的值即可。</p>
 <p><strong>注意：</strong> 请确保不存在<code>hexo/source/_data/next.yml</code>文件，如果有，请删除。</p>
 <h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p>利用数据文件特性，将所有主题配置都放在<code>source/_data/next.yml</code>文件中，并且不需要修改<code>next/_config.yml</code>文件。</p>
@@ -689,13 +692,16 @@
 <h6 id="enable-1"><a href="#enable-1" class="headerlink" title="enable"></a>enable</h6><p>是否显示主题类型和链接<code>(Theme - NexT.scheme)</code></p>
 <h6 id="version"><a href="#version" class="headerlink" title="version"></a>version</h6><p>是否显示主题版本号<code>(vX.X.X)</code></p>
 <h5 id="custom-text"><a href="#custom-text" class="headerlink" title="custom_text"></a>custom_text</h5><p>自定义内容，比如</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hosted by <span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">rel</span>=<span class="string">"external nofollow"</span> <span class="attr">href</span>=<span class="string">"https://pages.coding.me"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Coding Pages<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-html"><code class="language-html">Hosted by <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>external nofollow<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://pages.coding.me<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>Coding Pages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre>
 <h3 id="SEO相关设置"><a href="#SEO相关设置" class="headerlink" title="SEO相关设置"></a>SEO相关设置</h3><h4 id="canonical"><a href="#canonical" class="headerlink" title="canonical"></a>canonical</h4><p>是否开启<a href="https://support.google.com/webmasters/answer/139066?hl=zh-Hans" target="_blank" rel="noopener">整合重复网址功能</a></p>
 <p>在启用之前，记得在<code>hexo</code>根目录的<code>_config.yml</code>中设置<code>URL</code>，比如</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="attr">http://runningcoder.me</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//runningcoder.me
+</code></pre>
 <h4 id="seo"><a href="#seo" class="headerlink" title="seo"></a>seo</h4><p>启用后将更改网站副标题（网站的主要描述）和所有博客/页面标题上的标题层次结构，以实现更好的SEO优化</p>
 <h4 id="index-with-subtitle"><a href="#index-with-subtitle" class="headerlink" title="index_with_subtitle"></a>index_with_subtitle</h4><p>开启后，将在首页添加网页副标题，网页副标题在<code>hexo</code>项目根目录的<code>_config.yml</code>中设置</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">subtitle:</span> <span class="string">副标题内容</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">subtitle</span><span class="token punctuation">:</span> 副标题内容
+</code></pre>
 <h3 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h3><h4 id="menu"><a href="#menu" class="headerlink" title="menu"></a>menu</h4><p>当网页部署在子目录下（如 <code>runningcoder.me/blog</code>）时，移除链接前的<code>/</code>（/archives -&gt; archives）</p>
 <p>用法：<code>Key: /link/ || icon</code>，其中key是菜单项的名称，如果该菜单项的翻译在你所配置的语言文件中被找到，则页面上会显示翻译后的内容，如果没有找到，则会使用key的名称。需要注意的是，key的值是大小写敏感的</p>
 <p>在<code>||</code>字段之前的是目标链接，在<code>||</code>字段之后的是<a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="noopener">FontAwesome Icon</a>的图标名称。</p>
@@ -747,7 +753,8 @@
 <h5 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h5><p>是否开启过渡动画</p>
 <h5 id="exturl"><a href="#exturl" class="headerlink" title="exturl"></a>exturl</h5><p>是否对链接进行加密，启用之前确保在<code>tags</code>设置部分的链接加密配置已启用</p>
 <p>可以通过 <a href="https://www.base64encode.org/" target="_blank" rel="noopener">https://www.base64encode.org/</a> 网站对链接进行加密，加密后的效果如下</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">GitHub:</span> <span class="string">aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQ=</span> <span class="string">||</span> <span class="string">github</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">GitHub</span><span class="token punctuation">:</span> aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQ= <span class="token punctuation">|</span><span class="token punctuation">|</span> github
+</code></pre>
 <h4 id="github-banner"><a href="#github-banner" class="headerlink" title="github_banner"></a>github_banner</h4><p>右上角的<code>关注我的github</code>横幅</p>
 <p><img src="/images/create-personal-blog-with-github-and-hexo/github-banner.png"></p>
 <p>用法：<code>permalink || title</code>，<code>||</code>字段之前是目标固定链接，之后是标题内容（鼠标悬停其上时的显示文字）</p>
@@ -809,11 +816,18 @@
 <p><img src="/images/create-personal-blog-with-github-and-hexo/total_symbols_and_time.png"></p>
 <p>依赖于插件<a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">hexo-symbols-count-time</a></p>
 <p>首先安装插件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> yarn add hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">$ yarn add hexo-symbols-count-time
+</code></pre>
 <p>或</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">$ npm install hexo-symbols-count-time --save
+</code></pre>
 <p>接着在项目根目录的应用配置文件<code>_config.yml</code>中激活插件</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line"><span class="attr">  symbols:</span> <span class="literal">true</span>       <span class="comment"># 本文字数</span></span><br><span class="line"><span class="attr">  time:</span> <span class="literal">true</span>          <span class="comment"># 本文阅读时长</span></span><br><span class="line"><span class="attr">  total_symbols:</span> <span class="literal">true</span> <span class="comment"># 站点总字数</span></span><br><span class="line"><span class="attr">  total_time:</span> <span class="literal">true</span>    <span class="comment"># 站点总阅读时长</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">symbols_count_time</span><span class="token punctuation">:</span>
+  <span class="token key atrule">symbols</span><span class="token punctuation">:</span> <span class="token boolean important">true       </span><span class="token comment" spellcheck="true"># 本文字数</span>
+  <span class="token key atrule">time</span><span class="token punctuation">:</span> <span class="token boolean important">true          </span><span class="token comment" spellcheck="true"># 本文阅读时长</span>
+  <span class="token key atrule">total_symbols</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true"># 站点总字数</span>
+  <span class="token key atrule">total_time</span><span class="token punctuation">:</span> <span class="token boolean important">true    </span><span class="token comment" spellcheck="true"># 站点总阅读时长</span>
+</code></pre>
 <p>最后在next主题的配置文件中进行选项调整</p>
 <h5 id="separated-meta"><a href="#separated-meta" class="headerlink" title="separated_meta"></a>separated_meta</h5><p>是否显示分割线<code>|</code> </p>
 <h5 id="item-text-post"><a href="#item-text-post" class="headerlink" title="item_text_post"></a>item_text_post</h5><p>是否显示文章统计数字前的说明文字</p>
@@ -1036,7 +1050,10 @@
 <h5 id="save"><a href="#save" class="headerlink" title="save"></a>save</h5><p><code>auto</code>和<code>manual</code>2个值可选，如果是<code>auto</code>，则在关闭页面的时候或点击书签按钮的时候保存阅读位置，如果是<code>manual</code>，则只有点击书签按钮的时候保存阅读位置</p>
 <h3 id="标签设置"><a href="#标签设置" class="headerlink" title="标签设置"></a>标签设置</h3><h4 id="exturl-1"><a href="#exturl-1" class="headerlink" title="exturl"></a>exturl</h4><p>是否启用加密外部URL</p>
 <h4 id="note"><a href="#note" class="headerlink" title="note"></a>note</h4><p>便签（bootstrap-callout），可以在文章内容里通过下面的写法添加便签样式的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note [class] %&#125;</span><br><span class="line">Any content (support inline tags too).</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-swig"><code class="language-swig">{% note [class] %}
+Any content (support inline tags too).
+{% endnote %}
+</code></pre>
 <h5 id="style"><a href="#style" class="headerlink" title="style"></a>style</h5><p>样式，可选择以下4个值</p>
 <ul>
 <li>simple<img src="/images/create-personal-blog-with-github-and-hexo/note-simple.png" title="note-simple" alt="note-simple"></li>
@@ -1049,8 +1066,8 @@
 <h5 id="light-bg-offset-0"><a href="#light-bg-offset-0" class="headerlink" title="light_bg_offset: 0"></a>light_bg_offset: 0</h5><p><code>modern</code>和<code>flat</code>样式的背景偏移亮度的百分比（modern：-12 | 12; flat：-18 | 6）。</p>
 <h4 id="label"><a href="#label" class="headerlink" title="label"></a>label</h4><p>是否启用<code>label</code>标签插件</p>
 <p>用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label [class] %&#125;Content&#123;% endlabel %&#125;</span><br></pre></td></tr></table></figure>
-<p>class可选值有<code>default | primary | success | info | warning | danger.</code></p>
+<pre><code>{% label [class] %}Content{% endlabel %}
+</code></pre><p>class可选值有<code>default | primary | success | info | warning | danger.</code></p>
 <p>效果如下</p>
 <img src="/images/create-personal-blog-with-github-and-hexo/label.png" title="label" alt="label">
 <h4 id="tabs"><a href="#tabs" class="headerlink" title="tabs"></a>tabs</h4><p><code>tabs</code>标签插件</p>
@@ -1136,13 +1153,6 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
       
     </li>
@@ -1150,7 +1160,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（番外篇）</a></div>
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
       
     </li>
   
@@ -1165,6 +1175,13 @@
       
       
       <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（三）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（番外篇）</a></div>
       
     </li>
   
@@ -1269,6 +1286,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/" rel="prev" title="手摸手教你用 create-react-app 创建支持 Typescript 的 React 组件库">
+                手摸手教你用 create-react-app 创建支持 Typescript 的 React 组件库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -1355,7 +1376,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1374,7 +1395,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1393,7 +1420,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1490,7 +1521,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">37k</span>
   
 
   
@@ -1501,7 +1532,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   
 </div>
 
@@ -1736,7 +1767,7 @@
   
 
   
-  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("QwkK3nn4i0Di78LtixPeKqyG-gzGzoHsz", "mMpbTaF8d9Vy0zLyLLChpVhi");</script>
   <script>
     function showTime(Counter) {

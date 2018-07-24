@@ -237,7 +237,7 @@
   </style>
 </noscript>
 
-</head>
+<link rel="stylesheet" href="/css/prism-darcula.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -549,7 +549,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.8k</span>
+                <span title="本文字数">3.7k</span>
               
 
               
@@ -586,7 +586,88 @@
         <p>上一篇我们介绍了如何用<code>Hexo</code>来创建博客以及如何将博客内容部署到<code>Github</code>仓库里，这篇我们会详细说明<code>Hexo</code>框架内的<code>_config.yml</code>文件中的设置项都能带来哪些改变</p>
 <p>下面的内容是<code>Hexo</code>初始化项目后的<code>_config.yml</code>中全部内容</p>
 <a id="more"></a>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sitejit</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line"><span class="attr">description:</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span></span><br><span class="line"><span class="attr">language:</span></span><br><span class="line"><span class="attr">timezone:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  tab_replace:</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">  order_by:</span> <span class="bullet">-date</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="attr">HH:mm:ss</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Hexo Configuration</span>
+<span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/configuration.html</span>
+<span class="token comment" spellcheck="true">## Source: https://github.com/hexojs/hexo/</span>
+
+<span class="token comment" spellcheck="true"># Sitejit</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> Hexo
+<span class="token key atrule">subtitle</span><span class="token punctuation">:</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span>
+<span class="token key atrule">keywords</span><span class="token punctuation">:</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> John Doe
+<span class="token key atrule">language</span><span class="token punctuation">:</span>
+<span class="token key atrule">timezone</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true"># URL</span>
+<span class="token comment" spellcheck="true">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
+<span class="token key atrule">url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//yoursite.com
+<span class="token key atrule">root</span><span class="token punctuation">:</span> /
+<span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year/<span class="token punctuation">:</span>month/<span class="token punctuation">:</span>day/<span class="token punctuation">:</span>title/
+<span class="token key atrule">permalink_defaults</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true"># Directory</span>
+<span class="token key atrule">source_dir</span><span class="token punctuation">:</span> source
+<span class="token key atrule">public_dir</span><span class="token punctuation">:</span> public
+<span class="token key atrule">tag_dir</span><span class="token punctuation">:</span> tags
+<span class="token key atrule">archive_dir</span><span class="token punctuation">:</span> archives
+<span class="token key atrule">category_dir</span><span class="token punctuation">:</span> categories
+<span class="token key atrule">code_dir</span><span class="token punctuation">:</span> downloads/code
+<span class="token key atrule">i18n_dir</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>lang
+<span class="token key atrule">skip_render</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true"># Writing</span>
+<span class="token key atrule">new_post_name</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>title.md <span class="token comment" spellcheck="true"># File name of new posts</span>
+<span class="token key atrule">default_layout</span><span class="token punctuation">:</span> post
+<span class="token key atrule">titlecase</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># Transform title into titlecase</span>
+<span class="token key atrule">external_link</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true"># Open external links in new tab</span>
+<span class="token key atrule">filename_case</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token key atrule">render_drafts</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">post_asset_folder</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">relative_link</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">future</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true"># Home page setting</span>
+<span class="token comment" spellcheck="true"># path: Root path for your blogs index page. (default = '')</span>
+<span class="token comment" spellcheck="true"># per_page: Posts displayed per page. (0 = disable pagination)</span>
+<span class="token comment" spellcheck="true"># order_by: Posts order. (Order by date descending by default)</span>
+<span class="token key atrule">index_generator</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">per_page</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">order_by</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>date
+
+<span class="token comment" spellcheck="true"># Category &amp; Tag</span>
+<span class="token key atrule">default_category</span><span class="token punctuation">:</span> uncategorized
+<span class="token key atrule">category_map</span><span class="token punctuation">:</span>
+<span class="token key atrule">tag_map</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true"># Date / Time format</span>
+<span class="token comment" spellcheck="true">## Hexo uses Moment.js to parse and display date</span>
+<span class="token comment" spellcheck="true">## You can customize the date format as defined in</span>
+<span class="token comment" spellcheck="true">## http://momentjs.com/docs/#/displaying/format/</span>
+<span class="token key atrule">date_format</span><span class="token punctuation">:</span> YYYY<span class="token punctuation">-</span>MM<span class="token punctuation">-</span>DD
+<span class="token key atrule">time_format</span><span class="token punctuation">:</span> HH<span class="token punctuation">:</span>mm<span class="token punctuation">:</span>ss
+
+<span class="token comment" spellcheck="true"># Pagination</span>
+<span class="token comment" spellcheck="true">## Set per_page to 0 to disable pagination</span>
+<span class="token key atrule">per_page</span><span class="token punctuation">:</span> <span class="token number">10</span>
+<span class="token key atrule">pagination_dir</span><span class="token punctuation">:</span> page
+
+<span class="token comment" spellcheck="true"># Extensions</span>
+<span class="token comment" spellcheck="true">## Plugins: https://hexo.io/plugins/</span>
+<span class="token comment" spellcheck="true">## Themes: https://hexo.io/themes/</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> landscape
+
+<span class="token comment" spellcheck="true"># Deployment</span>
+<span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span>
+</code></pre>
 <h2 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h2><h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>网站的标题，大多数情况下会被用来显示在浏览器的标签页上以及首页（具体由各主题决定）</p>
 <p><img src="/images/create-personal-blog-with-github-and-hexo/config-site.png"></p>
 <h3 id="Subtitle"><a href="#Subtitle" class="headerlink" title="Subtitle"></a>Subtitle</h3><p><strong>注意：</strong> 首字母要小写，这里因为是关键字跟主题样式冲突，故首字母大小</p>
@@ -693,6 +774,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（二）</a></div>
       
     </li>
@@ -700,7 +788,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（一）</a></div>
+      <div class="popular-posts-title"><a href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./" rel="bookmark">手摸手教你用github和hexo搭建个人博客（四）</a></div>
       
     </li>
   
@@ -715,13 +803,6 @@
       
       
       <div class="popular-posts-title"><a href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（五）</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./" rel="bookmark">手摸手教你用github和hexo搭建个人博客（四）</a></div>
       
     </li>
   
@@ -816,8 +897,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/" rel="next" title="手摸手教你用github和hexo搭建个人博客（一）">
-                <i class="fa fa-chevron-left"></i> 手摸手教你用github和hexo搭建个人博客（一）
+              <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="next" title="手摸手教你用github和hexo搭建个人博客（番外篇）">
+                <i class="fa fa-chevron-left"></i> 手摸手教你用github和hexo搭建个人博客（番外篇）
               </a>
             
           </div>
@@ -826,8 +907,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/" rel="prev" title="手摸手教你用github和hexo搭建个人博客（番外篇）">
-                手摸手教你用github和hexo搭建个人博客（番外篇） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/" rel="prev" title="手摸手教你用github和hexo搭建个人博客（二）">
+                手摸手教你用github和hexo搭建个人博客（二） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -916,7 +997,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -935,7 +1016,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -954,7 +1041,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1051,7 +1142,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">37k</span>
   
 
   
@@ -1062,7 +1153,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   
 </div>
 
@@ -1297,7 +1388,7 @@
   
 
   
-  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("QwkK3nn4i0Di78LtixPeKqyG-gzGzoHsz", "mMpbTaF8d9Vy0zLyLLChpVhi");</script>
   <script>
     function showTime(Counter) {
