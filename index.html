@@ -5,6 +5,12 @@
 
 
 
+
+
+
+
+
+
   
 
 
@@ -98,19 +104,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.2.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.2.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6.2.0" color="#222">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6.3.0" color="#222">
 
 
 
@@ -127,7 +133,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.2.0',
+    version: '6.3.0',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     fastclick: true,
@@ -258,9 +264,11 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">Geek is a kind of belief!</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
@@ -271,7 +279,6 @@
     </button>
   </div>
 </div>
-
 
 
 
@@ -410,7 +417,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -469,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-18 16:15:18" itemprop="dateModified" datetime="2018-07-18T16:15:18+08:00">2018-07-18</time>
+                <time title="修改时间：2018-07-25 11:01:17" itemprop="dateModified" datetime="2018-07-25T11:01:17+08:00">2018-07-25</time>
               
             
           </span>
@@ -509,6 +516,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2018/07/17/create-react-component-library-with-create-react-app-and-typescript/" itemprop="commentCount"></span>
                 </a>
@@ -578,452 +586,14 @@
 
       
         
-          
-            <p>最近打算自己用 <code>React</code> 来实现 <code>Bootstrap</code> 的组件库，由于之前的 <code>React</code> 项目一直都在基于 <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">Create-react-app</a>（CRA） 作为脚手架，因此在想是否也可用 <code>CRA</code> 作为编写 <code>React</code> 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题</p>
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>首先我们先来创建项目，由于是基于 <code>CRA</code> 来创建，因此我们可以直接通过 <code>npx</code> (npm &gt;= 5.2.0)和 <code>create-react-app</code> 直接初始化项目，这里暂定项目名称为 <code>react-bootstrap-components-lib</code></p>
-<pre class=" language-powershell"><code class="language-powershell">$ npx create<span class="token operator">-</span>react<span class="token operator">-</span>app react<span class="token operator">-</span>bootstrap<span class="token operator">-</span>components<span class="token operator">-</span>lib <span class="token operator">--</span>scripts<span class="token operator">-</span>version=react<span class="token operator">-</span>scripts<span class="token operator">-</span>ts
-</code></pre>
-<div class="note info"><p><code>--scripts-version=react-scripts-ts</code> 是什么鬼？</p>
-<p><a href="https://github.com/Microsoft/TypeScript-React-Starter" target="_blank" rel="noopener">TypeSccript-React-Starter</a> 是微软创建的用于快速初始化支持 <code>TypeScript</code> 的脚手架，<a href="https://github.com/wmonk/create-react-app-typescript" target="_blank" rel="noopener">react-scripts-ts</a> 是帮助实现引入 <code>TypeScript</code>的工具</p></div>
-<p><strong>注意</strong>：创建好项目后，先执行 <code>eject</code> 命令将 <code>CRA</code> 封装起来的内容弹出来，因为下面我们添加 <code>Enzyme</code> 的时候需要修改 <code>package.json</code> 文件中的 <code>Jest</code> 配置</p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn eject
-</code></pre>
-<p>先完善一下 <code>package.json</code> 中的信息，如下所示</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"react-bootstrap-components-lib"</span><span class="token punctuation">,</span>
-  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.1.0"</span><span class="token punctuation">,</span>
-  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"The popular UI framework based on React."</span><span class="token punctuation">,</span>
-  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Kevin Lee"</span><span class="token punctuation">,</span>
-  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"git"</span><span class="token punctuation">,</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"git+https://github.com/RunningCoderLee/react-bootstrap-components-lib.git"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"bugs"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://github.com/RunningCoderLee/react-bootstrap-components-lib/issues"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"https://github.com/RunningCoderLee/react-bootstrap-components-lib#readme"</span><span class="token punctuation">,</span>
-  <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^16.4.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"^16.4.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-scripts-ts"</span><span class="token operator">:</span> <span class="token string">"2.16.0"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"node start"</span><span class="token punctuation">,</span>
-    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"node build"</span><span class="token punctuation">,</span>
-    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"node test --env=jsdom"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"@types/jest"</span><span class="token operator">:</span> <span class="token string">"^23.3.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/node"</span><span class="token operator">:</span> <span class="token string">"^10.5.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/react"</span><span class="token operator">:</span> <span class="token string">"^16.4.6"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/react-dom"</span><span class="token operator">:</span> <span class="token string">"^16.0.6"</span><span class="token punctuation">,</span>
-    <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^2.9.2"</span>
-  <span class="token punctuation">}</span>
-  ...
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="添加测试"><a href="#添加测试" class="headerlink" title="添加测试"></a>添加测试</h2><p><code>CRA</code> 里默认已整合了对 <code>Jest</code> 测试框架的支持，为了更好的对 <code>React 组件</code> 进行测试，我们只需添加对 <a href="https://github.com/airbnb/enzyme" target="_blank" rel="noopener">Enzyme</a> 的支持即可。</p>
-<h3 id="安装-Enzyme"><a href="#安装-Enzyme" class="headerlink" title="安装 Enzyme"></a>安装 Enzyme</h3><p>首先安装 <code>Enzyme</code> 和针对 <code>react(v16.x.x)</code> 的适配器</p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn add <span class="token operator">-</span>D enzyme enzyme<span class="token operator">-</span>adapter<span class="token operator">-</span>react<span class="token operator">-</span>16 @types<span class="token operator">/</span>enzyme @types<span class="token operator">/</span>enzyme<span class="token operator">-</span>adapter<span class="token operator">-</span>react<span class="token operator">-</span>16
-</code></pre>
-<h3 id="添加配置文件"><a href="#添加配置文件" class="headerlink" title="添加配置文件"></a>添加配置文件</h3><p>在 <code>src</code> 文件夹下创建 <code>setupTests.ts</code> 文件，在文件中添加如下内容：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// Temporary hack to suppress error</span>
-<span class="token comment" spellcheck="true">// https://github.com/facebookincubator/create-react-app/issues/3199</span>
-
-window<span class="token punctuation">.</span>requestAnimationFrame <span class="token operator">=</span> <span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token function">setTimeout</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token operator">*</span> as Enzyme <span class="token keyword">from</span> <span class="token string">'enzyme'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token operator">*</span> as Adapter <span class="token keyword">from</span> <span class="token string">'enzyme-adapter-react-16'</span><span class="token punctuation">;</span>
-Enzyme<span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">{</span> adapter<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Adapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>这个全局配置文件负责初始化全局测试环境并特别指明使用针对  <code>React v16</code> 版本的适配器</p>
-<h3 id="更改-Jest-配置"><a href="#更改-Jest-配置" class="headerlink" title="更改 Jest 配置"></a>更改 Jest 配置</h3><p>打开 <code>package.json</code> 文件，找到 <code>Jest</code> 对应的配置项，添加下列配置</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"jest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"setupTestFrameworkScriptFile"</span><span class="token operator">:</span> <span class="token string">"&lt;rootDir>/src/setupTests.ts"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="验证是否成功"><a href="#验证是否成功" class="headerlink" title="验证是否成功"></a>验证是否成功</h3><p>在完成配置后，我们可以来验证下是否成功</p>
-<p>打开 <code>App.test.tsx</code> 文件，替换如下代码</p>
-<pre class=" language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> shallow <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'enzyme'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span><span class="token punctuation">;</span>
-
-<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Test &lt;App />'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should render without throwing an error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-      <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">shallow</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>App</span> <span class="token punctuation">/></span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'.App'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveLength</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>执行如下命令</p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn test
-</code></pre>
-<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p>由于 <code>bootstrap</code> v4 版本采用 <code>Sass</code>，所以这里也以引入 <code>Sass</code> 为例</p>
-<p>根据 <code>CRA</code> 官方文档我们先安装所要用到的工具包</p>
-<pre class=" language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true"># 安装 Sass 命令行工具 node-sass-chokidar</span>
-<span class="token comment" spellcheck="true"># https://github.com/michaelwayman/node-sass-chokidar</span>
-$ yarn add <span class="token operator">-</span>D node<span class="token operator">-</span>sass<span class="token operator">-</span>chokidar
-
-<span class="token comment" spellcheck="true"># 安装跨平台运行多个 npm-scripts 的工具 npm-run-all</span>
-<span class="token comment" spellcheck="true"># https://github.com/mysticatea/npm-run-all</span>
-$ yarn add <span class="token operator">-</span>D npm<span class="token operator">-</span>run<span class="token operator">-</span>all
-
-<span class="token comment" spellcheck="true"># 安装帮助复制文件的工具 cpx</span>
-$ yarn add <span class="token operator">-</span>D cpx
-</code></pre>
-<p>安装成功后，我们去 <code>package.json</code> 中添加一些脚本命令：</p>
-<pre class=" language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-  <span class="token property">"start-js"</span><span class="token operator">:</span> <span class="token string">"node start"</span><span class="token punctuation">,</span>
-  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -p watch-sass-to-css start-js"</span><span class="token punctuation">,</span>
-  <span class="token property">"build-js"</span><span class="token operator">:</span> <span class="token string">"node build"</span><span class="token punctuation">,</span>
-  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -p build-sass-to-css build-js"</span><span class="token punctuation">,</span>
-  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"node test --env=jsdom"</span><span class="token punctuation">,</span>
-  <span class="token property">"copy-css-to-lib"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -s copy-base-css copy-component-css"</span><span class="token punctuation">,</span>
-  <span class="token property">"copy-base-css"</span><span class="token operator">:</span> <span class="token string">"cpx \"./src/**/*.css\" ./build/lib/"</span><span class="token punctuation">,</span>
-  <span class="token property">"copy-component-css"</span><span class="token operator">:</span> <span class="token string">"cpx \"./src/components/**/*.css\" ./build/lib/components"</span><span class="token punctuation">,</span>
-  <span class="token property">"build-sass-to-css"</span><span class="token operator">:</span> <span class="token string">"node-sass-chokidar src/ -o src/"</span><span class="token punctuation">,</span>
-  <span class="token property">"watch-sass-to-css"</span><span class="token operator">:</span> <span class="token string">"node-sass-chokidar src/ -o src/ --watch --recursive"</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>添加完毕后，我们把样式文件的扩展名从 <code>.css</code> 变为 <code>.scss</code></p>
-<p>一切准备就绪后，我们来测试下运转是否正常</p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn <span class="token function">start</span>
-</code></pre>
-<p>执行命令后如果一切运转正常，则会在浏览器中看到<code>CRA</code>脚手架的展示页面</p>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>现在我们开始开发我们的组件，在开发之前先统一一下文件夹结构，以 <code>Button</code> 组件为例</p>
-<pre><code>src/
-  ┣━ components/
-  ┃       ┣━ Button
-  ┃       ┃    ┣━ Button.tsx
-  ┃       ┃    ┣━ Button.scss
-  ┃       ┃    ┣━ Button.scss
-  ┃       ┃    ┗━ README.md
-  ┃       ┣━ ...
-  ┃       ┣━ index.scss
-  ┃       ┗━ index.tsx
-  ┗━ ...
-</code></pre><p>接着开始完善各个文件中的内容</p>
-<h3 id="index-tsx"><a href="#index-tsx" class="headerlink" title="index.tsx"></a>index.tsx</h3><p>这个文件是引用所有组件并统一导出的索引文件，另外这里还需引入由 <code>index.scss</code> 编译后的 <code>index.css</code> 文件</p>
-<pre class=" language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token string">'./index.css'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token keyword">default</span> <span class="token keyword">as</span> Button<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Button'</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="index-scss"><a href="#index-scss" class="headerlink" title="index.scss"></a>index.scss</h3><p>这个文件用于添加我们所需的所有样式文件，因为我是要用 <code>React</code> 来实现 <code>Bootstrap</code>，因此这里首先需要引入 <code>Bootstrap</code> 的样式文件</p>
-<p>先通过 <code>yarn</code> 或 <code>npm</code> 安装 <code>Bootstrap</code></p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn add <span class="token operator">-</span>D bootstrap
-</code></pre>
-<p>安装成功后后在此文件中引入 <code>Bootstrap</code> 的样式文件</p>
-<pre class=" language-scss"><code class="language-scss"><span class="token comment" spellcheck="true">// import the default bootstrap scss from node modules</span>
-<span class="token keyword">@import</span> <span class="token string">'node_modules/bootstrap/scss/bootstrap'</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="Button-tsx"><a href="#Button-tsx" class="headerlink" title="Button.tsx"></a>Button.tsx</h3><p>按钮组件的实现</p>
-<pre class=" language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> classNames <span class="token keyword">from</span> <span class="token string">'classnames'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">enum</span> Type <span class="token punctuation">{</span>
-  Primary <span class="token operator">=</span> <span class="token string">"primary"</span><span class="token punctuation">,</span>
-  Secondary <span class="token operator">=</span> <span class="token string">"secondary"</span><span class="token punctuation">,</span>
-  Succcess <span class="token operator">=</span> <span class="token string">"success"</span><span class="token punctuation">,</span>
-  Danger <span class="token operator">=</span> <span class="token string">"danger"</span><span class="token punctuation">,</span>
-  Warning <span class="token operator">=</span> <span class="token string">"warning"</span><span class="token punctuation">,</span>
-  Info <span class="token operator">=</span> <span class="token string">"info"</span><span class="token punctuation">,</span>
-  Light <span class="token operator">=</span> <span class="token string">"light"</span><span class="token punctuation">,</span>
-  Dark <span class="token operator">=</span> <span class="token string">"dark"</span><span class="token punctuation">,</span>
-  Link <span class="token operator">=</span> <span class="token string">"link"</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">IProps</span> <span class="token punctuation">{</span>
-  type<span class="token operator">?</span><span class="token punctuation">:</span> Type
-  className<span class="token operator">?</span><span class="token punctuation">:</span> string
-  children<span class="token operator">?</span><span class="token punctuation">:</span> JSX<span class="token punctuation">.</span>Element<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">|</span> JSX<span class="token punctuation">.</span>Element
-<span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">IState</span> <span class="token punctuation">{</span>
-  disabled<span class="token punctuation">:</span> boolean
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Button</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token operator">&lt;</span>IProps<span class="token punctuation">,</span> IState<span class="token operator">></span> <span class="token punctuation">{</span>
-
-  <span class="token keyword">public</span> <span class="token keyword">static</span> defaultProps<span class="token punctuation">:</span> IProps <span class="token operator">=</span> <span class="token punctuation">{</span>
-    type<span class="token punctuation">:</span> Type<span class="token punctuation">.</span>Primary
-  <span class="token punctuation">}</span>
-
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">:</span> IProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
-      disabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">public</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span>type<span class="token punctuation">,</span> children<span class="token punctuation">,</span> className<span class="token punctuation">,</span> <span class="token operator">...</span>props<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span>disabled<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> clsName <span class="token operator">=</span> <span class="token function">classNames</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-      <span class="token punctuation">[</span><span class="token template-string"><span class="token string">`btn-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>type<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span> className<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token operator">&lt;</span>button <span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span> disabled<span class="token operator">=</span><span class="token punctuation">{</span>disabled<span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token punctuation">{</span>clsName<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> Button<span class="token punctuation">;</span>
-</code></pre>
-<h3 id="index-ts"><a href="#index-ts" class="headerlink" title="index.ts"></a>index.ts</h3><p>这个文件用于引用并导出 <code>Button</code> 组件，当然我们可以直接在 <code>Button.tsx</code> 文件中直接导出，这样做的目的是方便日后扩展，比如增添 <code>ButtonGroup</code> 组件</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token keyword">default</span><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Button'</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h3><p>这里的说明文档一会将和 <a href="https://react-styleguidist.js.org/" target="_blank" rel="noopener">Styleguidist</a> 一起搭配使用</p>
-<pre class=" language-markdown"><code class="language-markdown">Button example:
-
-~~~js
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Success<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>warning<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Warning<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Info<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Light<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Dark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-~~~
-</code></pre>
-<h2 id="Styleguide"><a href="#Styleguide" class="headerlink" title="Styleguide"></a>Styleguide</h2><p><a href="https://react-styleguidist.js.org/" target="_blank" rel="noopener">Styleguidist</a> 是一款可以帮助我们生成组件展示页面的工具</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-powershell"><code class="language-powershell">$ yarn add <span class="token operator">-</span>D react<span class="token operator">-</span>styleguidist
-</code></pre>
-<p>安装成功后，我们在 <code>package.json</code> 里添加下面的几个脚本命令</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  ...
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"styleguide"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -p watch-sass-to-css styleguidist"</span><span class="token punctuation">,</span>
-    <span class="token property">"styleguidist"</span><span class="token operator">:</span> <span class="token string">"styleguidist server"</span><span class="token punctuation">,</span>
-    <span class="token property">"styleguide-build"</span><span class="token operator">:</span> <span class="token string">"styleguidist build"</span>
-  <span class="token punctuation">}</span>
-  ...
-<span class="token punctuation">}</span>
-</code></pre>
-<p>最后再安装一个用来解析 typescript 中定义属性的工具 <a href="https://github.com/styleguidist/react-docgen-typescript" target="_blank" rel="noopener">react-docgen-typescript</a></p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn add <span class="token operator">-</span>D react<span class="token operator">-</span>docgen<span class="token operator">-</span>typescript
-</code></pre>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在项目根目录中创建 <code>styleguide.config.js</code> 文件，内容如下：</p>
-<pre class=" language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  components<span class="token punctuation">:</span> <span class="token string">'src/components/**/*.{ts,tsx}'</span><span class="token punctuation">,</span>
-  ignore<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token string">'src/setupTests.ts'</span><span class="token punctuation">,</span>
-    <span class="token string">'**/*.spec.ts'</span><span class="token punctuation">,</span>
-    <span class="token string">'**/*.spec.tsx'</span><span class="token punctuation">,</span>
-    <span class="token string">'**/*.test.ts'</span><span class="token punctuation">,</span>
-    <span class="token string">'**/*.test.tsx'</span><span class="token punctuation">,</span>
-    <span class="token string">'**/*.d.ts'</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  propsParser<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'react-docgen-typescript'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parse<span class="token punctuation">,</span>
-  webpackConfig<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./config/webpack.config.dev.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>一切准备就绪后，我们可以通过执行下面的命令来打开 styleguide 页面</p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn styleguide
-</code></pre>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>首先继续完善 <code>package.json</code> 文件，如下：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"react-bootstrap-components-lib"</span><span class="token punctuation">,</span>
-  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.1.0"</span><span class="token punctuation">,</span>
-  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"The popular UI framework based on React."</span><span class="token punctuation">,</span>
-  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Kevin Lee"</span><span class="token punctuation">,</span>
-  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"git"</span><span class="token punctuation">,</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"git+https://github.com/RunningCoderLee/react-bootstrap-components-lib.git"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">"build/lib"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"bugs"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://github.com/RunningCoderLee/react-bootstrap-components-lib/issues"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"https://github.com/RunningCoderLee/react-bootstrap-components-lib#readme"</span><span class="token punctuation">,</span>
-  <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"classnames"</span><span class="token operator">:</span> <span class="token string">"^2.2.6"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"peerDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">">=16.0.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">">=16.0.0"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -p watch-sass-to-css start-js"</span><span class="token punctuation">,</span>
-    <span class="token property">"start-js"</span><span class="token operator">:</span> <span class="token string">"node scripts/start.js"</span><span class="token punctuation">,</span>
-    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -p build-sass-to-css build-js"</span><span class="token punctuation">,</span>
-    <span class="token property">"build-lib"</span><span class="token operator">:</span> <span class="token string">"tsc &amp;&amp; npm run build-sass-to-css &amp;&amp; npm run copy-css-to-lib"</span><span class="token punctuation">,</span>
-    <span class="token property">"build-js"</span><span class="token operator">:</span> <span class="token string">"node scripts/build.js"</span><span class="token punctuation">,</span>
-    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"node scripts/test.js --env=jsdom"</span><span class="token punctuation">,</span>
-    <span class="token property">"copy-css-to-lib"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -s copy-base-css copy-component-css"</span><span class="token punctuation">,</span>
-    <span class="token property">"copy-base-css"</span><span class="token operator">:</span> <span class="token string">"cpx \"./src/**/*.css\" ./build/lib/"</span><span class="token punctuation">,</span>
-    <span class="token property">"copy-component-css"</span><span class="token operator">:</span> <span class="token string">"cpx \"./src/components/**/*.css\" ./build/lib/components"</span><span class="token punctuation">,</span>
-    <span class="token property">"build-sass-to-css"</span><span class="token operator">:</span> <span class="token string">"node-sass-chokidar src/ -o src/"</span><span class="token punctuation">,</span>
-    <span class="token property">"watch-sass-to-css"</span><span class="token operator">:</span> <span class="token string">"node-sass-chokidar src/ -o src/ --watch --recursive"</span><span class="token punctuation">,</span>
-    <span class="token property">"styleguide"</span><span class="token operator">:</span> <span class="token string">"npm-run-all -p  watch-sass-to-css styleguidist"</span><span class="token punctuation">,</span>
-    <span class="token property">"styleguidist"</span><span class="token operator">:</span> <span class="token string">"styleguidist server"</span><span class="token punctuation">,</span>
-    <span class="token property">"styleguide-build"</span><span class="token operator">:</span> <span class="token string">"styleguidist build"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"@types/classnames"</span><span class="token operator">:</span> <span class="token string">"^2.2.5"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/enzyme"</span><span class="token operator">:</span> <span class="token string">"^3.1.12"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/enzyme-adapter-react-16"</span><span class="token operator">:</span> <span class="token string">"^1.0.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/jest"</span><span class="token operator">:</span> <span class="token string">"^23.3.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/node"</span><span class="token operator">:</span> <span class="token string">"^10.5.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/react"</span><span class="token operator">:</span> <span class="token string">"^16.4.6"</span><span class="token punctuation">,</span>
-    <span class="token property">"@types/react-dom"</span><span class="token operator">:</span> <span class="token string">"^16.0.6"</span><span class="token punctuation">,</span>
-    <span class="token property">"autoprefixer"</span><span class="token operator">:</span> <span class="token string">"7.1.6"</span><span class="token punctuation">,</span>
-    <span class="token property">"babel-jest"</span><span class="token operator">:</span> <span class="token string">"^22.1.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"babel-loader"</span><span class="token operator">:</span> <span class="token string">"^7.1.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"babel-preset-react-app"</span><span class="token operator">:</span> <span class="token string">"^3.1.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"bootstrap"</span><span class="token operator">:</span> <span class="token string">"^4.1.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"case-sensitive-paths-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"2.1.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"chalk"</span><span class="token operator">:</span> <span class="token string">"1.1.3"</span><span class="token punctuation">,</span>
-    <span class="token property">"css-loader"</span><span class="token operator">:</span> <span class="token string">"0.28.7"</span><span class="token punctuation">,</span>
-    <span class="token property">"cpx"</span><span class="token operator">:</span> <span class="token string">"^1.5.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"dotenv"</span><span class="token operator">:</span> <span class="token string">"4.0.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"dotenv-expand"</span><span class="token operator">:</span> <span class="token string">"4.2.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"enzyme"</span><span class="token operator">:</span> <span class="token string">"^3.3.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"enzyme-adapter-react-16"</span><span class="token operator">:</span> <span class="token string">"^1.1.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"extract-text-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"3.0.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"file-loader"</span><span class="token operator">:</span> <span class="token string">"0.11.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"fork-ts-checker-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^0.2.8"</span><span class="token punctuation">,</span>
-    <span class="token property">"fs-extra"</span><span class="token operator">:</span> <span class="token string">"3.0.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"html-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"2.29.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"jest"</span><span class="token operator">:</span> <span class="token string">"22.4.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"node-sass-chokidar"</span><span class="token operator">:</span> <span class="token string">"^1.3.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"npm-run-all"</span><span class="token operator">:</span> <span class="token string">"^4.1.3"</span><span class="token punctuation">,</span>
-    <span class="token property">"object-assign"</span><span class="token operator">:</span> <span class="token string">"4.1.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"postcss-flexbugs-fixes"</span><span class="token operator">:</span> <span class="token string">"3.2.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"postcss-loader"</span><span class="token operator">:</span> <span class="token string">"2.0.8"</span><span class="token punctuation">,</span>
-    <span class="token property">"promise"</span><span class="token operator">:</span> <span class="token string">"8.0.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"raf"</span><span class="token operator">:</span> <span class="token string">"3.4.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^16.4.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"^16.4.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-dev-utils"</span><span class="token operator">:</span> <span class="token string">"^5.0.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-docgen-typescript"</span><span class="token operator">:</span> <span class="token string">"^1.6.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"react-styleguidist"</span><span class="token operator">:</span> <span class="token string">"^7.1.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"resolve"</span><span class="token operator">:</span> <span class="token string">"1.6.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"source-map-loader"</span><span class="token operator">:</span> <span class="token string">"^0.2.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"style-loader"</span><span class="token operator">:</span> <span class="token string">"0.19.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"sw-precache-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"0.11.4"</span><span class="token punctuation">,</span>
-    <span class="token property">"ts-jest"</span><span class="token operator">:</span> <span class="token string">"22.0.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"ts-loader"</span><span class="token operator">:</span> <span class="token string">"^2.3.7"</span><span class="token punctuation">,</span>
-    <span class="token property">"tsconfig-paths-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^2.0.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"tslint"</span><span class="token operator">:</span> <span class="token string">"^5.7.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"tslint-config-prettier"</span><span class="token operator">:</span> <span class="token string">"^1.10.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"tslint-react"</span><span class="token operator">:</span> <span class="token string">"^3.2.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^2.9.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"uglifyjs-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^1.1.8"</span><span class="token punctuation">,</span>
-    <span class="token property">"url-loader"</span><span class="token operator">:</span> <span class="token string">"0.6.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"3.8.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"webpack-dev-server"</span><span class="token operator">:</span> <span class="token string">"2.9.4"</span><span class="token punctuation">,</span>
-    <span class="token property">"webpack-manifest-plugin"</span><span class="token operator">:</span> <span class="token string">"1.3.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"whatwg-fetch"</span><span class="token operator">:</span> <span class="token string">"2.0.3"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"jest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"collectCoverageFrom"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"src/**/*.{js,jsx,ts,tsx}"</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"setupTestFrameworkScriptFile"</span><span class="token operator">:</span> <span class="token string">"&lt;rootDir>/src/setupTests.ts"</span><span class="token punctuation">,</span>
-    <span class="token property">"setupFiles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"&lt;rootDir>/config/polyfills.js"</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"testMatch"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      "&lt;rootDir>/src/**/__tests__/**/*.(j|t<span class="token punctuation">)</span>s?(x<span class="token punctuation">)</span><span class="token string">",
-      "</span>&lt;rootDir>/src/**/?(*.<span class="token punctuation">)</span>(spec|test<span class="token punctuation">)</span>.(j|t<span class="token punctuation">)</span>s?(x<span class="token punctuation">)</span>"
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"testEnvironment"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span>
-    <span class="token property">"testURL"</span><span class="token operator">:</span> <span class="token string">"http://localhost"</span><span class="token punctuation">,</span>
-    <span class="token property">"transform"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      "^.+\\.(js|jsx|mjs<span class="token punctuation">)</span>$"<span class="token operator">:</span> <span class="token string">"&lt;rootDir>/node_modules/babel-jest"</span><span class="token punctuation">,</span>
-      <span class="token property">"^.+\\.tsx?$"</span><span class="token operator">:</span> <span class="token string">"&lt;rootDir>/config/jest/typescriptTransform.js"</span><span class="token punctuation">,</span>
-      <span class="token property">"^.+\\.css$"</span><span class="token operator">:</span> <span class="token string">"&lt;rootDir>/config/jest/cssTransform.js"</span><span class="token punctuation">,</span>
-      "^(?!.*\\.(js|jsx|mjs|css|json<span class="token punctuation">)</span>$<span class="token punctuation">)</span>"<span class="token operator">:</span> <span class="token string">"&lt;rootDir>/config/jest/fileTransform.js"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"transformIgnorePatterns"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      "<span class="token punctuation">[</span>/\\\\<span class="token punctuation">]</span>node_modules<span class="token punctuation">[</span>/\\\\<span class="token punctuation">]</span>.+\\.(js|jsx|mjs|ts|tsx<span class="token punctuation">)</span>$"
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"moduleNameMapper"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"^react-native$"</span><span class="token operator">:</span> <span class="token string">"react-native-web"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"moduleFileExtensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"web.ts"</span><span class="token punctuation">,</span>
-      <span class="token string">"ts"</span><span class="token punctuation">,</span>
-      <span class="token string">"web.tsx"</span><span class="token punctuation">,</span>
-      <span class="token string">"tsx"</span><span class="token punctuation">,</span>
-      <span class="token string">"web.js"</span><span class="token punctuation">,</span>
-      <span class="token string">"js"</span><span class="token punctuation">,</span>
-      <span class="token string">"web.jsx"</span><span class="token punctuation">,</span>
-      <span class="token string">"jsx"</span><span class="token punctuation">,</span>
-      <span class="token string">"json"</span><span class="token punctuation">,</span>
-      <span class="token string">"node"</span><span class="token punctuation">,</span>
-      <span class="token string">"mjs"</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"globals"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"ts-jest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"tsConfigFile"</span><span class="token operator">:</span> <span class="token string">"/Users/kevin/development/github/mine/react-bootstrap-components-lib/tsconfig.test.json"</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"babel"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"react-app"</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"eslintConfig"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"react-app"</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>接着我们需要更新 <code>tsconfig.json</code> 中的内容</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"."</span><span class="token punctuation">,</span>
-    <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"build/lib"</span><span class="token punctuation">,</span>
-    <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"commonjs"</span><span class="token punctuation">,</span>
-    <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es5"</span><span class="token punctuation">,</span>
-    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"es5"</span><span class="token punctuation">,</span> <span class="token string">"es6"</span><span class="token punctuation">,</span> <span class="token string">"dom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"sourceMap"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"allowJs"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token property">"jsx"</span><span class="token operator">:</span> <span class="token string">"react"</span><span class="token punctuation">,</span>
-    <span class="token property">"moduleResolution"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span>
-    <span class="token property">"rootDir"</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span>
-    <span class="token property">"forceConsistentCasingInFileNames"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"noImplicitReturns"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"noImplicitThis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"noImplicitAny"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"strictNullChecks"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"suppressImplicitAnyIndexErrors"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"noUnusedLocals"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"declaration"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">"node_modules"</span><span class="token punctuation">,</span>
-    <span class="token string">"build"</span><span class="token punctuation">,</span>
-    <span class="token string">"scripts"</span><span class="token punctuation">,</span>
-    <span class="token string">"acceptance-tests"</span><span class="token punctuation">,</span>
-    <span class="token string">"webpack"</span><span class="token punctuation">,</span>
-    <span class="token string">"jest"</span><span class="token punctuation">,</span>
-    <span class="token string">"src/setupTests.ts"</span><span class="token punctuation">,</span>
-    <span class="token string">"**/*.spec.ts"</span><span class="token punctuation">,</span>
-    <span class="token string">"**/*.test.ts"</span><span class="token punctuation">,</span>
-    <span class="token string">"config"</span><span class="token punctuation">,</span>
-    <span class="token string">"dist"</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>最后，我们开始编译、打包和发布我们的组件库</p>
-<pre class=" language-powershell"><code class="language-powershell">$ yarn build<span class="token operator">-</span>lib
-$ npm publish
-</code></pre>
-
-          
+          <p>最近打算自己用 <code>React</code> 来实现 <code>Bootstrap</code> 的组件库，由于之前的 <code>React</code> 项目一直都在基于 <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">Create-react-app</a>（CRA） 作为脚手架，因此在想是否也可用 <code>CRA</code> 作为编写 <code>React</code> 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1079,7 +649,7 @@ $ npm publish
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1185,6 +755,7 @@ $ npm publish
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2018/04/26/create-personal-blog-with-github-and-hexo-V/" itemprop="commentCount"></span>
                 </a>
@@ -1258,7 +829,7 @@ $ npm publish
 <p><img src="/images/create-personal-blog-with-github-and-hexo/next.png"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/#更多" rel="contents">
+            <a class="btn" href="/2018/04/26/create-personal-blog-with-github-and-hexo-V/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1318,7 +889,7 @@ $ npm publish
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1424,6 +995,7 @@ $ npm publish
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2018/03/29/create-personal-blog-with-github-and-hexo-IIII./" itemprop="commentCount"></span>
                 </a>
@@ -1497,7 +1069,7 @@ $ npm publish
 <p><img src="/images/create-personal-blog-with-github-and-hexo/next.png"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./#更多" rel="contents">
+            <a class="btn" href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1557,7 +1129,7 @@ $ npm publish
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1663,6 +1235,7 @@ $ npm publish
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2017/12/29/create-personal-blog-with-github-and-hexo-II/" itemprop="commentCount"></span>
                 </a>
@@ -1736,7 +1309,7 @@ $ npm publish
 <p><img src="/images/create-personal-blog-with-github-and-hexo/hexo.png" alt="Hexo"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/#更多" rel="contents">
+            <a class="btn" href="/2017/12/29/create-personal-blog-with-github-and-hexo-II/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1796,7 +1369,7 @@ $ npm publish
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1902,6 +1475,7 @@ $ npm publish
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2017/12/29/create-personal-blog-with-github-and-hexo-III/" itemprop="commentCount"></span>
                 </a>
@@ -1975,7 +1549,7 @@ $ npm publish
 <p>下面的内容是<code>Hexo</code>初始化项目后的<code>_config.yml</code>中全部内容</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/#更多" rel="contents">
+            <a class="btn" href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2035,7 +1609,7 @@ $ npm publish
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -2141,6 +1715,7 @@ $ npm publish
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2017/12/29/create-personal-blog-with-github-and-hexo-extend/" itemprop="commentCount"></span>
                 </a>
@@ -2213,7 +1788,7 @@ $ npm publish
           <p>这篇主要讲解一下如何将我们购买的域名和<code>Github</code>的<code>Git Page</code>服务关联起来，从而实现访问购买的域名直接跳转到博客页面的需求</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/#更多" rel="contents">
+            <a class="btn" href="/2017/12/29/create-personal-blog-with-github-and-hexo-extend/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2273,7 +1848,7 @@ $ npm publish
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -2379,6 +1954,7 @@ $ npm publish
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2017/12/28/create-personal-blog-with-github-and-hexo-I/" itemprop="commentCount"></span>
                 </a>
@@ -2452,7 +2028,7 @@ $ npm publish
 <p><img src="/images/create-personal-blog-with-github-and-hexo/github-pages.png" alt="Github Pages"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/#更多" rel="contents">
+            <a class="btn" href="/2017/12/28/create-personal-blog-with-github-and-hexo-I/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2687,7 +2263,7 @@ $ npm publish
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.6.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -2695,7 +2271,7 @@ $ npm publish
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
 
 
 
@@ -2722,7 +2298,10 @@ $ npm publish
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -2798,28 +2377,28 @@ $ npm publish
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
 
 
 
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
@@ -2828,18 +2407,6 @@ $ npm publish
   
     <script id="dsq-count-scr" src="https://runningcoder.disqus.com/count.js" async></script>
   
-
-  
-
-
-
-
-
-	
-
-
-
-
 
   
 
@@ -2873,7 +2440,7 @@ $ npm publish
   <script src="https://cdn.bootcss.com/instantsearch.js/2.7.2/instantsearch.min.js"></script>
   
 
-  <script src="/js/src/algolia-search.js?v=6.2.0"></script>
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
 
 
 
@@ -3004,64 +2571,6 @@ $ npm publish
 
 
   
-  <style>
-      .copy-btn {
-          display: inline-block;
-          padding: 6px 12px;
-          font-size: 13px;
-          font-weight: 700;
-          line-height: 20px;
-          color: #333;
-          white-space: nowrap;
-          vertical-align: middle;
-          cursor: pointer;
-          background-color: #eee;
-          background-image: linear-gradient(#fcfcfc, #eee);
-          border: 1px solid #d5d5d5;
-          border-radius: 3px;
-          user-select: none;
-      }
-
-      .highlight-wrap .copy-btn {
-          transition: opacity .3s ease-in-out;
-          opacity: 0;
-          padding: 2px 6px;
-          position: absolute;
-          right: 4px;
-          top: 8px;
-      }
-
-      .highlight-wrap:hover .copy-btn,
-      .highlight-wrap .copy-btn:focus {
-          opacity: 1
-      }
-
-      .highlight-wrap {
-          position: relative;
-      }
-  </style>
-  <script>
-      $('.highlight').each(function(i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
-                  return $(e).text()
-              }).toArray().join('\n')
-              var ta = document.createElement('textarea')
-              document.body.appendChild(ta)
-              ta.style.position = 'fixed'
-              ta.style.top = 0
-              ta.style.left = 0
-              ta.value = code
-              ta.select()
-              ta.focus()
-              document.execCommand('copy')
-              document.body.removeChild(ta)
-          })).append(e)
-      })
-  </script>
-
 
 </body>
 </html>

@@ -5,6 +5,12 @@
 
 
 
+
+
+
+
+
+
   
 
 
@@ -98,19 +104,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.2.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.2.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6.2.0" color="#222">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6.3.0" color="#222">
 
 
 
@@ -127,7 +133,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.2.0',
+    version: '6.3.0',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     fastclick: true,
@@ -150,18 +156,18 @@
 
 
 
-  <meta name="description" content="最近打算自己用 React 来实现 Bootstrap 的组件库，由于之前的 React 项目一直都在基于 Create-react-app（CRA） 作为脚手架，因此在想是否也可用 CRA 作为编写 React 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题 创建项目首先我们先来创建项目，由于是基于 CRA 来创建，因此我们可以直接通过">
-<meta name="keywords" content="tutorial,react">
+  <meta name="description" content="最近打算自己用 React 来实现 Bootstrap 的组件库，由于之前的 React 项目一直都在基于 Create-react-app（CRA） 作为脚手架，因此在想是否也可用 CRA 作为编写 React 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题">
+<meta name="keywords" content="react,tutorial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="手摸手教你用 create-react-app 创建支持 Typescript 的 React 组件库">
 <meta property="og:url" content="http://blog.runningcoder.me/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/index.html">
 <meta property="og:site_name" content="Kevin的博客">
-<meta property="og:description" content="最近打算自己用 React 来实现 Bootstrap 的组件库，由于之前的 React 项目一直都在基于 Create-react-app（CRA） 作为脚手架，因此在想是否也可用 CRA 作为编写 React 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题 创建项目首先我们先来创建项目，由于是基于 CRA 来创建，因此我们可以直接通过">
+<meta property="og:description" content="最近打算自己用 React 来实现 Bootstrap 的组件库，由于之前的 React 项目一直都在基于 Create-react-app（CRA） 作为脚手架，因此在想是否也可用 CRA 作为编写 React 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-18T08:15:18.007Z">
+<meta property="og:updated_time" content="2018-07-25T03:01:17.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手摸手教你用 create-react-app 创建支持 Typescript 的 React 组件库">
-<meta name="twitter:description" content="最近打算自己用 React 来实现 Bootstrap 的组件库，由于之前的 React 项目一直都在基于 Create-react-app（CRA） 作为脚手架，因此在想是否也可用 CRA 作为编写 React 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题 创建项目首先我们先来创建项目，由于是基于 CRA 来创建，因此我们可以直接通过">
+<meta name="twitter:description" content="最近打算自己用 React 来实现 Bootstrap 的组件库，由于之前的 React 项目一直都在基于 Create-react-app（CRA） 作为脚手架，因此在想是否也可用 CRA 作为编写 React 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题">
 
 
 
@@ -259,9 +265,11 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">Geek is a kind of belief!</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
@@ -272,7 +280,6 @@
     </button>
   </div>
 </div>
-
 
 
 
@@ -411,7 +418,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lee">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="这里是Kevin的博客!">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -466,7 +473,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-18 16:15:18" itemprop="dateModified" datetime="2018-07-18T16:15:18+08:00">2018-07-18</time>
+                <time title="修改时间：2018-07-25 11:01:17" itemprop="dateModified" datetime="2018-07-25T11:01:17+08:00">2018-07-25</time>
               
             
           </span>
@@ -506,6 +513,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2018/07/17/create-react-component-library-with-create-react-app-and-typescript/" itemprop="commentCount"></span>
                 </a>
@@ -575,11 +583,11 @@
 
       
         <p>最近打算自己用 <code>React</code> 来实现 <code>Bootstrap</code> 的组件库，由于之前的 <code>React</code> 项目一直都在基于 <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">Create-react-app</a>（CRA） 作为脚手架，因此在想是否也可用 <code>CRA</code> 作为编写 <code>React</code> 组件库的启动脚手架，在网上搜了一圈并亲自实践后发现还是比较容易实现我们的需求的。话不多说，下面直接进入正题</p>
+<a id="more"></a>
 <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>首先我们先来创建项目，由于是基于 <code>CRA</code> 来创建，因此我们可以直接通过 <code>npx</code> (npm &gt;= 5.2.0)和 <code>create-react-app</code> 直接初始化项目，这里暂定项目名称为 <code>react-bootstrap-components-lib</code></p>
 <pre class=" language-powershell"><code class="language-powershell">$ npx create<span class="token operator">-</span>react<span class="token operator">-</span>app react<span class="token operator">-</span>bootstrap<span class="token operator">-</span>components<span class="token operator">-</span>lib <span class="token operator">--</span>scripts<span class="token operator">-</span>version=react<span class="token operator">-</span>scripts<span class="token operator">-</span>ts
 </code></pre>
-<div class="note info"><p><code>--scripts-version=react-scripts-ts</code> 是什么鬼？</p>
-<p><a href="https://github.com/Microsoft/TypeScript-React-Starter" target="_blank" rel="noopener">TypeSccript-React-Starter</a> 是微软创建的用于快速初始化支持 <code>TypeScript</code> 的脚手架，<a href="https://github.com/wmonk/create-react-app-typescript" target="_blank" rel="noopener">react-scripts-ts</a> 是帮助实现引入 <code>TypeScript</code>的工具</p></div>
+<div class="note info"><p><code>--scripts-version=react-scripts-ts</code> 是什么鬼？</p><p><a href="https://github.com/Microsoft/TypeScript-React-Starter" target="_blank" rel="noopener">TypeSccript-React-Starter</a> 是微软创建的用于快速初始化支持 <code>TypeScript</code> 的脚手架，<a href="https://github.com/wmonk/create-react-app-typescript" target="_blank" rel="noopener">react-scripts-ts</a> 是帮助实现引入 <code>TypeScript</code>的工具</p></div>
 <p><strong>注意</strong>：创建好项目后，先执行 <code>eject</code> 命令将 <code>CRA</code> 封装起来的内容弹出来，因为下面我们添加 <code>Enzyme</code> 的时候需要修改 <code>package.json</code> 文件中的 <code>Jest</code> 配置</p>
 <pre class=" language-powershell"><code class="language-powershell">$ yarn eject
 </code></pre>
@@ -768,7 +776,8 @@ $ yarn add <span class="token operator">-</span>D cpx
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> Button<span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> Button<span class="token punctuation">;</span>  
+
 </code></pre>
 <h3 id="index-ts"><a href="#index-ts" class="headerlink" title="index.ts"></a>index.ts</h3><p>这个文件用于引用并导出 <code>Button</code> 组件，当然我们可以直接在 <code>Button.tsx</code> 文件中直接导出，这样做的目的是方便日后扩展，比如增添 <code>ButtonGroup</code> 组件</p>
 <pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token keyword">default</span><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Button'</span><span class="token punctuation">;</span>
@@ -786,7 +795,7 @@ $ yarn add <span class="token operator">-</span>D cpx
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Light<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Dark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
-~~~
+~~~ 
 </code></pre>
 <h2 id="Styleguide"><a href="#Styleguide" class="headerlink" title="Styleguide"></a>Styleguide</h2><p><a href="https://react-styleguidist.js.org/" target="_blank" rel="noopener">Styleguidist</a> 是一款可以帮助我们生成组件展示页面的工具</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-powershell"><code class="language-powershell">$ yarn add <span class="token operator">-</span>D react<span class="token operator">-</span>styleguidist
@@ -1044,14 +1053,14 @@ $ npm publish
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./" rel="bookmark">手摸手教你用github和hexo搭建个人博客（四）</a></div>
+      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（三）</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2017/12/29/create-personal-blog-with-github-and-hexo-III/" rel="bookmark">手摸手教你用github和hexo搭建个人博客（三）</a></div>
+      <div class="popular-posts-title"><a href="/2018/03/29/create-personal-blog-with-github-and-hexo-IIII./" rel="bookmark">手摸手教你用github和hexo搭建个人博客（四）</a></div>
       
     </li>
   
@@ -1124,9 +1133,9 @@ $ npm publish
       
         <div class="post-tags">
           
-            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
-          
             <a href="/tags/react/" rel="tag"># react</a>
+          
+            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
           
         </div>
       
@@ -1175,10 +1184,6 @@ $ npm publish
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -1410,7 +1415,7 @@ $ npm publish
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.6.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -1418,7 +1423,7 @@ $ npm publish
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
 
 
 
@@ -1445,7 +1450,10 @@ $ npm publish
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -1521,32 +1529,32 @@ $ npm publish
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
@@ -1562,7 +1570,7 @@ $ npm publish
         this.page.url = 'http://blog.runningcoder.me/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/';
         this.page.identifier = '2018/07/17/create-react-component-library-with-create-react-app-and-typescript/';
         this.page.title = '手摸手教你用 create-react-app 创建支持 Typescript 的 React 组件库';
-      };
+        };
       function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://runningcoder.disqus.com/embed.js';
@@ -1587,18 +1595,6 @@ $ npm publish
         });
       
     </script>
-  
-
-
-
-
-
-	
-
-
-
-
-
   
 
 
@@ -1631,7 +1627,7 @@ $ npm publish
   <script src="https://cdn.bootcss.com/instantsearch.js/2.7.2/instantsearch.min.js"></script>
   
 
-  <script src="/js/src/algolia-search.js?v=6.2.0"></script>
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
 
 
 
@@ -1779,64 +1775,6 @@ $ npm publish
 
 
   
-  <style>
-      .copy-btn {
-          display: inline-block;
-          padding: 6px 12px;
-          font-size: 13px;
-          font-weight: 700;
-          line-height: 20px;
-          color: #333;
-          white-space: nowrap;
-          vertical-align: middle;
-          cursor: pointer;
-          background-color: #eee;
-          background-image: linear-gradient(#fcfcfc, #eee);
-          border: 1px solid #d5d5d5;
-          border-radius: 3px;
-          user-select: none;
-      }
-
-      .highlight-wrap .copy-btn {
-          transition: opacity .3s ease-in-out;
-          opacity: 0;
-          padding: 2px 6px;
-          position: absolute;
-          right: 4px;
-          top: 8px;
-      }
-
-      .highlight-wrap:hover .copy-btn,
-      .highlight-wrap .copy-btn:focus {
-          opacity: 1
-      }
-
-      .highlight-wrap {
-          position: relative;
-      }
-  </style>
-  <script>
-      $('.highlight').each(function(i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
-                  return $(e).text()
-              }).toArray().join('\n')
-              var ta = document.createElement('textarea')
-              document.body.appendChild(ta)
-              ta.style.position = 'fixed'
-              ta.style.top = 0
-              ta.style.left = 0
-              ta.value = code
-              ta.select()
-              ta.focus()
-              document.execCommand('copy')
-              document.body.removeChild(ta)
-          })).append(e)
-      })
-  </script>
-
 
 </body>
 </html>
