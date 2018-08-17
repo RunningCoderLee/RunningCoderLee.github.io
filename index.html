@@ -413,6 +413,237 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.runningcoder.me/2018/08/17/learning-lerna/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kevin Lee">
+      <meta itemprop="description" content="这里是Kevin的博客!">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevin的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/learning-lerna/" itemprop="url">
+                  手摸手教你玩转 Lerna
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-17 00:00:00 / 修改时间：19:06:44" itemprop="dateCreated datePublished" datetime="2018-08-17T00:00:00+08:00">2018-08-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/lerna/" itemprop="url" rel="index"><span itemprop="name">lerna</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/lerna/tutorial/" itemprop="url" rel="index"><span itemprop="name">tutorial</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/lerna/tutorial/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/17/learning-lerna/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/17/learning-lerna/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/17/learning-lerna/" class="leancloud_visitors" data-flag-title="手摸手教你玩转 Lerna">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="什么是-Lerna"><a href="#什么是-Lerna" class="headerlink" title="什么是 Lerna"></a>什么是 Lerna</h2><blockquote>
+<p>A tool for managing JavaScript projects with multiple packages.</p>
+</blockquote>
+<p>Lerna 是一个管理多个 node 模块的工具，是 Babel 自己用来维护自己的 <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md" target="_blank" rel="noopener">Monorepo</a> 并开源出的一个项目。Lerna 现在已经被很多著名的项目组织使用，如：<a href="https://github.com/babel/babel/tree/master/packages" target="_blank" rel="noopener">Babel</a>, <a href="https://github.com/facebook/react/tree/master/packages" target="_blank" rel="noopener">React</a>, <a href="https://github.com/angular/angular/tree/master/modules" target="_blank" rel="noopener">Angular</a>, <a href="https://github.com/emberjs/ember.js/tree/master/packages" target="_blank" rel="noopener">Ember</a>, <a href="https://github.com/meteor/meteor/tree/devel/packages" target="_blank" rel="noopener">Meteor</a>, <a href="https://github.com/facebook/jest/tree/master/packages" target="_blank" rel="noopener">Jest</a> 。</p>
+<img src="/images/learning-lerna/lerna.png" title="lerna" alt="lerna">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/17/learning-lerna/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.runningcoder.me/2018/07/17/create-react-component-library-with-create-react-app-and-typescript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2116,7 +2347,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2141,7 +2372,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2164,7 +2401,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2245,7 +2484,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">48k</span>
   
 
   
@@ -2256,7 +2495,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">34 分钟</span>
+    <span title="站点阅读时长">43 分钟</span>
   
 </div>
 
